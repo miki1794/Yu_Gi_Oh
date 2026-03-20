@@ -1,0 +1,9 @@
+Model\Bean\Carrello.class
+Model\Bean\Ordine.class
+Model\Bean\Utente.class
+Model\Bean\DettaglioOrdine.class
+Controller\Everyone\HomeServlet.class
+Model\Bean\CarrelloItem.class
+Model\Bean\Carta.class
+Controller\Everyone\RegistrazioneServlet.class
+Model\Bean\Inventario.class

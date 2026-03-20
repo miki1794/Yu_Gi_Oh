@@ -1,0 +1,22 @@
+.header-links{
+    display: flex;
+    justify-content: center;
+    gap: 40%;
+}
+
+header{
+    background-color: #AF8B46;
+
+}
+.header-links a{
+    color: #1F1300;
+    text-decoration: none;
+
+
+}
+.search-box{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+

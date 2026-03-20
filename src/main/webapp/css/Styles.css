@@ -1,0 +1,23 @@
+button:hover {
+    background-color: #4A3A2D;
+    color:#FEF6E6;
+}
+
+input {
+    background-color: #DFD6A7;
+    border-radius: 8px;
+
+
+}
+
+input:hover{
+    background-color: #C3B7D8;
+
+}
+body{
+    min-height: 100vh;
+    margin:auto;
+    width:100%;
+    background: #DFD6A7;
+    position:relative;
+}

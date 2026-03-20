@@ -1,0 +1,42 @@
+
+fieldset{
+
+    border: solid 3px #1175ef;
+
+}
+label{
+    font-size:100%;
+    letter-spacing: normal;
+    color: brown;
+    white-space: nowrap;
+}
+
+
+#usernamelabel {
+    color:  blue;
+
+}
+.button{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 30%;
+    display: flex;
+    align-self: center;
+
+}
+
+.phoneGroup{
+    display: flex;
+    gap: 30px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.input{
+    width: 50%;
+}
+
