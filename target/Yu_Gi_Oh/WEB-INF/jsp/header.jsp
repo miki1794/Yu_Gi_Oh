@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
     <title>Registrazione</title>
-
+</head>
 <header class="header">
     <div class="header-links">
         <a href="home">Home</a>

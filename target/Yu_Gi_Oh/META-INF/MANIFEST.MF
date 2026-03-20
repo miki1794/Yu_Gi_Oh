@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
 Built-By: michelepolverino
-Build-Jdk: GraalVM 21.0.7 - VM 23.1.7 - aarch64
+Build-Jdk: Amazon Corretto 24.0.2 - aarch64
 

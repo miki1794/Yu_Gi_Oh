@@ -4,6 +4,7 @@ package Controller.Everyone;
 import Model.Bean.Utente;
 import Model.Dao.UtenteDao;
 import Model.Util.Utils;
+import eccezioni.ValidException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 
 
 @WebServlet(name = "registrazione", value = "/registrazione")
@@ -68,6 +70,28 @@ boolean success=service.doSave(utente);
 
     }
     private void Sicurezza(Utente utente, String conferma, UtenteDao service){
+        ArrayList<String> errori=new ArrayList<>();
+        if(!Utils.isValidEmail(utente.getEmail())||utente.getEmail()==null||utente.getEmail().isEmpty()){
+
+            errori.add("Email invalido");
+        }
+if(!Utils.isValidPassword(utente.getPassword())||utente.getPassword()==null||utente.getPassword().isEmpty()||!utente.getPassword().equals(conferma)){
+    errori.add("Password invalido");
+}
+if(!Utils.isValidUsername(utente.getNomeUtente())||utente.getNomeUtente()==null||utente.getNomeUtente().isEmpty()){
+    errori.add("Nome utente invalido");
+}
+if(Usernameinuso(utente.getNomeUtente(),service)){
+    errori.add("Nome in uso");
+}
+if(emailinuso(utente.getEmail(),service)){
+    errori.add("Email in uso");
+}
+if (!errori.isEmpty()) {
+    throw new ValidException(errori);
+}
+
+
 
     }
     private boolean Usernameinuso(String username, UtenteDao service){

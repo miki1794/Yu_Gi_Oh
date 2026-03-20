@@ -24,10 +24,6 @@
   <div class="info">
     <p>&copy; 2026 Yu-Gi-Oh. All rights reserved.</p>
   </div>
-
-
-
-
 </footer>
 
 

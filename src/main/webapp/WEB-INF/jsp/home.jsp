@@ -7,6 +7,9 @@
     <a href="registrazione">
         <button>Registrati</button>
     </a>
+<a href="login">
+    <button>login</button>
+</a>
 
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
