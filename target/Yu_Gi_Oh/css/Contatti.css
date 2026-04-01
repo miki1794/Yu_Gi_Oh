@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(180deg,#DFD6A7 5%, #AF9B46 67%);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    padding: 5%;
+    min-height: 100vh;
+}
+
+.contact {
+    width: 100%;
+    align-self: center;
+    padding: 5%;
+    font-size: 2vw;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #FEF6E6;
+    letter-spacing: 2px;
+    background-color: #F7CE5B;
+    color: #FEF6E6;
+}

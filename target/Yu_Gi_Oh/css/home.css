@@ -1,0 +1,52 @@
+.conteiner{
+    background-color: #DFD6A7;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+
+
+
+
+}
+.slideshow{
+    border:solid 3px #F7CE5B;
+    background-color: #F7CE5B;
+    width: auto;
+    max-width:100% ;
+    min-height: 100vh;
+}
+.bestseller{
+    border: solid 3px blue;
+    width: auto;
+
+}
+.titolo{
+    border: solid 3px #AF9B46;;
+    background-color: #AF9B46;
+    width: auto;
+}
+.testo{
+    border: solid 5px #F7B058;
+    background-color: #F7B058;
+    width: auto;
+
+}
+.slideshow img{
+    width: 100%;
+    min-height: 80vh;
+    object-fit: cover;
+    display: block;
+    border: solid 2px violet;
+
+}
+.bottone-prodotti{
+
+    padding: 10px 20px;
+}
+.conteiner > a {
+    align-self: center;
+    margin-top: 20px;
+}
+

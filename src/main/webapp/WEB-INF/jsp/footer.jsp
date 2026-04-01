@@ -19,8 +19,11 @@
 <footer class="footer">
   <div class="footer-links">
     <a href="Privacy">Privacy Policy</a>
-    <a href="contact">Contatti</a>
+    <a href="Contatti">Contattami</a>
+
   </div>
+
+
   <div class="info">
     <p>&copy; 2026 Yu-Gi-Oh. All rights reserved.</p>
   </div>
