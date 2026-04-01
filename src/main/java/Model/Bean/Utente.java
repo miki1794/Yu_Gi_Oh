@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Utente {
-    private int idUtente;
+    private String idUtente;
    private String nomeUtente;
    private String numeroTelefono;
     private String email;
@@ -15,11 +15,11 @@ public class Utente {
     private String ruolo;
 
 
-    public int getIdUtente() {
+    public String getIdUtente() {
         return idUtente;
     }
 
-    public void setIdUtente(int idUtente) {
+    public void setIdUtente(String idUtente) {
         this.idUtente = idUtente;
     }
 
@@ -89,7 +89,7 @@ public class Utente {
         this.ruolo = "base";
     }
 
-    public Utente(int idUtente, String nomeUtente, String numeroTelefono, String email, String password, Date dataNascita) {
+    public Utente(String idUtente, String nomeUtente, String numeroTelefono, String email, String password, Date dataNascita) {
         this.idUtente = idUtente;
         this.nomeUtente = nomeUtente;
         this.numeroTelefono = numeroTelefono;

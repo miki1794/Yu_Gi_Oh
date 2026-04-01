@@ -48,7 +48,7 @@
                     <input type="password" class ="input" id="conferma-password" name="conferma-password" placeholder="conferma password"><br>
 
 
-                    <input type="button" value="registrati" class="button">
+                    <input type="submit" value="registrati" class="button">
 
                 </div>
             </fieldset>
