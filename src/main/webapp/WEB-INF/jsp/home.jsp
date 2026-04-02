@@ -17,7 +17,23 @@
     <a href="prodotti">
         <button>prodotti</button>
     </a>
-    <div class="slideshow"></div>
+    <div class="slideshow">
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img1.jpg" alt="img1">
+        </div>
+
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img2.jpg" alt="img2">
+        </div>
+
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img3.jpg" alt="img3">
+        </div>
+        <a class="left" onclick="changeSlide(-1)"></a>
+
+        <a class="right" onclick="changeSlide(1)"></a>
+
+    </div>
     <div class="bestseller"></div>
     <div class="titolo">
 
@@ -39,6 +55,7 @@
 
 </div>
 
-
-</body>
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/script/SlideShow.js"></script>
+</body>
+

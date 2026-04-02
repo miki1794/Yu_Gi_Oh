@@ -15,7 +15,7 @@
 </head>
 <header class="header">
     <div class="header-links">
-        <a href="home">Home</a>
+        <a href="Home">Home</a>
         <a href="catalogo">Catalogo</a>
         <a href="login">Login</a>
         <a href="registrazione">Registrati</a>
