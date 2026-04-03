@@ -35,8 +35,8 @@
 }
 .slideshow img {
     width: 100%;
-    height: 100%;        /* aggiunto */
-    object-fit: cover;
+    height: auto;        /* aggiunto */
+    object-fit: contain;
 }
 .bottone-prodotti{
 

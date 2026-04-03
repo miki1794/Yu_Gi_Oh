@@ -29,6 +29,22 @@
         <div class="slide">
             <img src="${pageContext.request.contextPath}/assets/img3.jpg" alt="img3">
         </div>
+
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img4.jpg" alt="img4">
+        </div>
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img5.jpg" alt="img5">
+        </div>
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img6.jpg" alt="img6">
+        </div>
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img7.jpg" alt="img7">
+        </div>
+        <div class="slide">
+            <img src="${pageContext.request.contextPath}/assets/img8.jpg" alt="img8">
+        </div>
         <a class="left" onclick="changeSlide(-1)"></a>
 
         <a class="right" onclick="changeSlide(1)"></a>
@@ -58,4 +74,5 @@
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/script/SlideShow.js"></script>
 </body>
+
 

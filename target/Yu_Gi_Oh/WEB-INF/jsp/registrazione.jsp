@@ -58,5 +58,5 @@
 
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
-
+<script src="${pageContext.request.contextPath}/script/Regioni.js"></script>
 </html>
