@@ -19,11 +19,9 @@
     position: relative;
 
 }
-.bestseller{
-    border: solid 3px blue;
-    width: auto;
 
-}
+
+
 .titolo{
     border: solid 3px #AF9B46;;
     background-color: #AF9B46;
@@ -37,8 +35,8 @@
 }
 .slideshow img {
     width: 100%;
-    height: 100%;        /* aggiunto */
-    object-fit: cover;
+    height: auto;        /* aggiunto */
+    object-fit: contain;
 }
 .bottone-prodotti{
 

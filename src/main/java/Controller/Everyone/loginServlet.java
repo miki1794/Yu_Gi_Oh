@@ -69,7 +69,7 @@ public class loginServlet extends HttpServlet {
             map.put("dataNascita", utente.getDataNascita().toString());
             map.put("ruolo", utente.getRuolo());
             session.setAttribute("map",map);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/homepage.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
             dispatcher.forward(request, response);
             return;
         } else {

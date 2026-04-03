@@ -4,12 +4,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Bean.Utente;
-import Model.Util.DBManager;
 
 
 public class UtenteDao extends AbstractDAO {
 
-    // Salva un nuovo utente nel DB
+
     public boolean doSave(Utente utente) {
        try{
 
@@ -84,7 +83,7 @@ public class UtenteDao extends AbstractDAO {
                     utente.setPassword(result.getString("password"));
                     utente.setDataNascita(result.getDate("DataDiNascita"));
                     utente.setNumeroTelefono(result.getString("NumeroDiTelefono"));
-                    utente.setRuolo(result.getString("tipo"));
+                    utente.setRuolo(result.getString("ruolo"));
                 }
 
             } catch (SQLException e) {
@@ -106,12 +105,12 @@ public class UtenteDao extends AbstractDAO {
             ResultSet result = ps.executeQuery();
             while (result.next()) {
                 Utente utente = new Utente();
-                result.getString("username");
-                result.getString("password");
-                result.getString("email");
-                result.getDate("DataDiNascita");
-                result.getString("NumeroDiTelefono");
-                result.getString("tipo");
+                utente.setNomeUtente(result.getString("username"));
+                utente.setPassword(result.getString("password"));
+                utente.setEmail(result.getString("email"));
+                utente.setDataNascita(result.getDate("DataDiNascita"));
+                utente.setNumeroTelefono(result.getString("NumeroDiTelefono"));
+                utente.setRuolo(result.getString("ruolo"));
                 utenteList.add(utente);
 
             }
@@ -130,7 +129,7 @@ public class UtenteDao extends AbstractDAO {
         Utente utente = null;
 
         try (Connection connection = getConnection();
-             PreparedStatement ps = prepareStatement(connection, "GET_USER_BY_ID")) {
+             PreparedStatement ps = prepareStatement(connection, "GET_USER_BY_EMAIL")) {
 
             ps.setString(1, email);
             ResultSet result = ps.executeQuery();
@@ -142,7 +141,7 @@ public class UtenteDao extends AbstractDAO {
                 utente.setPassword(result.getString("password"));
                 utente.setDataNascita(result.getDate("DataDiNascita"));
                 utente.setNumeroTelefono(result.getString("NumeroDiTelefono"));
-                utente.setRuolo(result.getString("tipo"));
+                utente.setRuolo(result.getString("ruolo"));
             }
 
         } catch (SQLException e) {
@@ -173,7 +172,7 @@ public class UtenteDao extends AbstractDAO {
                 utente.setPassword(result.getString("password"));
                 utente.setDataNascita(result.getDate("DataDiNascita"));
                 utente.setNumeroTelefono(result.getString("NumeroDiTelefono"));
-                utente.setRuolo(result.getString("tipo"));
+                utente.setRuolo(result.getString("ruolo"));
             }
 
         } catch (SQLException e) {

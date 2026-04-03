@@ -25,7 +25,7 @@ public class DBManager {
             properties.setDriverClassName("com.mysql.cj.jdbc.Driver");
             properties.setUrl("jdbc:mysql://localhost:3306/YuGiOh?serverTimezone=" + TimeZone.getDefault().getID());
             properties.setUsername("root");
-            properties.setPassword("Ciao123");
+            properties.setPassword("Capua@81043");
             properties.setMaxActive(100);
             properties.setMaxIdle(50); 
             properties.setInitialSize(10);

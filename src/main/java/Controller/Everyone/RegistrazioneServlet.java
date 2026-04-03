@@ -64,7 +64,7 @@ public class RegistrazioneServlet extends HttpServlet {
         }
 boolean success=service.doSave(utente);
         if(success){
-            response.sendRedirect("/Yu_Gi_OH/login");
+            response.sendRedirect("/Yu_Gi_Oh_war_exploded/login");
 
         }
 

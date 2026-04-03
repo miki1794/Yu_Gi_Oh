@@ -16,7 +16,7 @@
 
 
 <div class="login-container">
-    <form action="Login" method="POST" class="login-form" onsubmit="return validateForm()">
+    <form action="login" method="POST" class="login-form" onsubmit="return validateForm()">
         <fieldset>
             <legend>Login</legend>
 
