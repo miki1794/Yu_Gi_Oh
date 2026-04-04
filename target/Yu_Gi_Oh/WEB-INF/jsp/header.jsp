@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
-    <title>Registrazione</title>
+    <title>header</title>
 </head>
 <header class="header">
     <div class="header-links">

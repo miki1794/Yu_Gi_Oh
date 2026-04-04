@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
-  <title>Registrazione</title>
+  <title>footer</title>
 </head>
 <body>
 <footer class="footer">
