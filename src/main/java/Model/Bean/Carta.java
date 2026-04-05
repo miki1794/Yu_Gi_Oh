@@ -13,11 +13,21 @@ public class Carta {
         this.id = id;
         this.nome = nome;
         this.effetto = effetto;
+        this.tipo =tipo;
+        this.attacco = attacco;
+        this.difesa = difesa;
+        this.prezzo=prezzo;
+    }
+    public Carta( String nome, String effetto, String tipo, int attacco, int difesa,float prezzo) {
+
+        this.nome = nome;
+        this.effetto = effetto;
         this.tipo = tipo;
         this.attacco = attacco;
         this.difesa = difesa;
         this.prezzo=prezzo;
     }
+
 
     public Carta() {
 
