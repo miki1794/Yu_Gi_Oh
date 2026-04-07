@@ -45,3 +45,8 @@ header {
     border:none;
     background-color:#AF9B46 ;
 }
+#rightsection {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}

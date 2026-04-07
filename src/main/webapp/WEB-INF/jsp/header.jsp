@@ -35,5 +35,8 @@
         <input type="text" placeholder="Cerca carta (es: Drago Bianco)...">
         <button>Trova</button>
     </div>
+
     <script src="${pageContext.request.contextPath}/script/ProfileChanger.js"></script>
+
+
 </header>

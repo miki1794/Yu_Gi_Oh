@@ -31,23 +31,26 @@ public class UtenteDao extends AbstractDAO {
 
     // Aggiorna i dati di un utente esistente
     public boolean doUpdate(Utente utente) {
-        try{
-            Connection connection=getConnection();
-            PreparedStatement ps=prepareStatement(connection,"Update_utenti");
+        String queryName = "Update_utenti"; // Assicurati che nel tuo file query ci sia il WHERE username = ?
+        try (Connection connection = getConnection();
+             PreparedStatement ps = prepareStatement(connection, queryName)) {
+
             ps.setString(1, utente.getNomeUtente());
             ps.setString(2, utente.getEmail());
             ps.setString(3, utente.getPassword());
             ps.setDate(4, utente.getDataNascita());
             ps.setString(5, utente.getNumeroTelefono());
             ps.setString(6, utente.getRuolo());
+            // Parametro per il WHERE: usiamo lo username per identificare l'utente da aggiornare
+            ps.setString(7, utente.getNomeUtente());
+
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-           return false;
+            e.printStackTrace();
+            return false;
         }
     }
-
     // Elimina un utente dal DB
     public boolean delete(Utente utente) {
         try{
