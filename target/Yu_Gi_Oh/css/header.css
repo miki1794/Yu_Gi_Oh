@@ -32,10 +32,16 @@ header {
     justify-content: center;
     gap: 15px;
     padding-bottom: 5px;
+
 }
 
 
 .header-links a:hover {
     text-decoration: underline;
     opacity: 0.8;
+}
+.search-box button{
+    border-radius: 30%;
+    border:none;
+    background-color:#AF9B46 ;
 }

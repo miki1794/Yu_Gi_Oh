@@ -15,8 +15,10 @@
 <jsp:include page="header.jsp"></jsp:include>
 <div class="conteiner">
     <a href="prodotti">
-        <button>prodotti</button>
+        <h1> Prodotti</h1>
+
     </a>
+
     <div class="slideshow">
         <div class="slide">
             <img src="${pageContext.request.contextPath}/assets/img1.jpg" alt="img1">
@@ -30,21 +32,7 @@
             <img src="${pageContext.request.contextPath}/assets/img3.jpg" alt="img3">
         </div>
 
-        <div class="slide">
-            <img src="${pageContext.request.contextPath}/assets/img4.jpg" alt="img4">
-        </div>
-        <div class="slide">
-            <img src="${pageContext.request.contextPath}/assets/img5.jpg" alt="img5">
-        </div>
-        <div class="slide">
-            <img src="${pageContext.request.contextPath}/assets/img6.jpg" alt="img6">
-        </div>
-        <div class="slide">
-            <img src="${pageContext.request.contextPath}/assets/img7.jpg" alt="img7">
-        </div>
-        <div class="slide">
-            <img src="${pageContext.request.contextPath}/assets/img8.jpg" alt="img8">
-        </div>
+
         <a class="left" onclick="changeSlide(-1)"></a>
 
         <a class="right" onclick="changeSlide(1)"></a>
@@ -53,10 +41,10 @@
     <div class="bestseller"></div>
     <div class="titolo">
 
-        <h1>
-            riguardo me:
+        <h2>
+            Riguardo me:
 
-        </h1>
+        </h2>
 
     </div>
     <div class=testo>

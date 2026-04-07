@@ -38,7 +38,7 @@ public class RegistrazioneServlet extends HttpServlet {
         String password=request.getParameter("password");
         String confirmPassword=request.getParameter("conferma-password");
         String dataNascita=request.getParameter("DataDiNascita");
-        String nazione=request.getParameter("Nazione");//TODO risolvere per il numero di telefono
+        String nazione=request.getParameter("Nazione");
         Date formattedDate = null;
 
 

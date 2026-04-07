@@ -23,4 +23,20 @@
     <entry key="GET_ALL_USERS">
         SELECT * FROM Utenti
     </entry>
+    <entry key="save_carta">
+        INSERT INTO Carta( id,nome,effetto,tipo,attacco,difesa,prezzo)
+        VALUES (?, ?, ?, ?, ?, ?)
+    </entry>
+    <entry key="Update_carta">
+        UPDATE Carta SET nome=?, effetto=?, tipo=?, attacco=?, difesa=?,tipo=? WHERE id=?
+    </entry>
+    <entry key="Delete_carta">
+        DELETE FROM Carta WHERE id=?
+    </entry>
+    <entry key="GET_ALL_CARTE">
+        SELECT * FROM Carta
+    </entry>
+    <entry key="GET_CARTE_BY_NAME">
+        SELECT * FROM Carta WHERE nome=?
+    </entry>
 </properties>

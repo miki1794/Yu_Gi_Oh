@@ -54,6 +54,7 @@ public class loginServlet extends HttpServlet {
             System.err.println(e.getMessage());
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
             dispatcher.forward(request, response);
+            return;
 
         }
         UtenteDao service= new UtenteDao();
