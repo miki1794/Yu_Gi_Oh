@@ -1,261 +1,93 @@
-/* =============================================
-   modificaprofilo.css — Yu-Gi-Oh! Profile Edit
-   Palette: parchment / gold / dark wood
-   ============================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
-
-/* ---------- CSS Variables ---------- */
-:root {
-    --gold:        #AF8B46;
-    --gold-light:  #D4AA6A;
-    --gold-dark:   #7A6030;
-    --parchment:   #DFD6A7;
-    --parchment-light: #F2EDD0;
-    --ink:         #1F1300;
-    --ink-soft:    #3B2A10;
-    --red-card:    #8B1A1A;
-    --blue-card:   #1175ef;
-    --shadow:      rgba(31, 19, 0, 0.35);
-}
-
-/* ---------- Base ---------- */
 body {
-    min-height: 100vh;
+    background-color: #1F1300;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background: var(--parchment);
-    background-image:
-        radial-gradient(ellipse at 20% 20%, rgba(175,139,70,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 80%, rgba(139,26,26,0.08) 0%, transparent 50%);
-    font-family: 'Crimson Text', Georgia, serif;
-    color: var(--ink);
 }
 
-/* ---------- Page Layout ---------- */
-.profile-edit-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 3rem 1.5rem 4rem;
-    min-height: calc(100vh - 120px);
+
+.registration-container {
+    background: #DFD6A7;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 520px;
+    margin: 40px auto;
 }
 
-/* ---------- Card Container ---------- */
-.profile-card {
-    background: var(--parchment-light);
-    border: 2px solid var(--gold);
-    border-radius: 4px;
-    box-shadow:
-        0 0 0 1px var(--gold-dark),
-        6px 6px 0 0 var(--gold-dark),
-        0 12px 40px var(--shadow);
-    width: 100%;
-    max-width: 560px;
-    padding: 2.5rem 2.8rem 2rem;
-    position: relative;
-    animation: cardReveal 0.5s ease both;
-}
 
-@keyframes cardReveal {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Corner decorations */
-.profile-card::before,
-.profile-card::after {
-    content: '✦';
-    position: absolute;
-    font-size: 1.1rem;
-    color: var(--gold);
-    line-height: 1;
-}
-.profile-card::before { top: 10px;  left:  14px; }
-.profile-card::after  { top: 10px;  right: 14px; }
-
-/* ---------- Title / Legend ---------- */
-.card-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-align: center;
-    color: var(--ink);
-    margin: 0 0 0.25rem;
-    text-shadow: 1px 1px 0 var(--gold-light);
-}
-
-.card-divider {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
-    margin: 0.5rem 0 1.8rem;
-}
-
-/* ---------- Fieldset reset ---------- */
 fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
+    border: solid 3px #AF9B46;
 }
 
-/* ---------- Form Groups ---------- */
+
+.biglabel {
+    color: #1F1300;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+label {
+    font-size: 100%;
+    letter-spacing: normal;
+    color: #AF9B46;
+    white-space: nowrap;
+}
+
+#usernamelabel {
+    color: #1F1300;
+}
+
+
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    justify-content: center;
 }
 
-.field-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-}
 
-.field-row label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    margin-bottom: 0.35rem;
-}
-
-.field-row small {
-    font-family: 'Crimson Text', serif;
-    font-size: 0.78rem;
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: 0;
-    color: var(--ink-soft);
-    opacity: 0.75;
-    margin-left: 0.4rem;
-}
-
-/* ---------- Inputs ---------- */
-.field-row input {
-    width: 100%;
+.input {
+    width: 50%;
+    padding: 6px 8px;
+    margin-bottom: 10px;
     box-sizing: border-box;
-    background: var(--parchment);
-    border: 1.5px solid var(--gold);
-    border-radius: 3px;
-    padding: 0.55rem 0.85rem;
-    font-family: 'Crimson Text', serif;
-    font-size: 1rem;
-    color: var(--ink);
+    border: 1.5px solid #AF9B46;
+    border-radius: 5px;
+    background: #fff;
+    color: #1F1300;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
-.field-row input:hover {
-    background: #e8e0b8;
-    border-color: var(--gold-light);
+.input:focus {
+    border-color: #F7CE5B;
+    box-shadow: 0 0 0 3px rgba(247, 206, 91, 0.3);
 }
 
-.field-row input:focus {
-    background: #fff8e8;
-    border-color: var(--blue-card);
-    box-shadow: 0 0 0 3px rgba(17,117,239,0.12);
-}
-
-.field-row input::placeholder {
-    color: var(--ink-soft);
-    opacity: 0.5;
-    font-style: italic;
-}
-
-/* ---------- Phone row (inline) ---------- */
-.phone-row {
+.phoneGroup {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1.1rem;
-}
-.phone-row .field-row {
-    flex: 1;
-    margin-bottom: 0;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-/* ---------- Password section separator ---------- */
-.section-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    text-align: center;
-    margin: 1.4rem 0 1rem;
-    position: relative;
-}
-.section-label::before,
-.section-label::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 28%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--gold));
-}
-.section-label::before { left: 0; }
-.section-label::after  { right: 0; background: linear-gradient(to left, transparent, var(--gold)); }
 
-/* ---------- Submit Button ---------- */
-.submit-btn {
-    display: block;
-    width: 60%;
-    margin: 1.8rem auto 0;
-    padding: 0.7rem 1rem;
-    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-    color: var(--parchment-light);
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border: 1.5px solid var(--gold-dark);
-    border-radius: 3px;
+.button {
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 30%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
     cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
-    box-shadow: 0 3px 10px var(--shadow);
+    background: #F7CE5B;
+    color: #1F1300;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s;
 }
 
-.submit-btn:hover {
-    filter: brightness(1.15);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px var(--shadow);
-    background-color: unset; /* override global button:hover */
-    color: var(--parchment-light);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px var(--shadow);
-}
-
-/* ---------- Feedback Messages ---------- */
-.msg-error,
-.msg-success {
-    padding: 0.65rem 1rem;
-    border-radius: 3px;
-    font-family: 'Crimson Text', serif;
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-    border-left: 4px solid;
-    animation: fadeIn 0.3s ease;
-}
-.msg-error {
-    background: rgba(139,26,26,0.1);
-    border-color: var(--red-card);
-    color: var(--red-card);
-}
-.msg-success {
-    background: rgba(50,100,50,0.1);
-    border-color: #3a7a3a;
-    color: #2a5a2a;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateX(-8px); }
-    to   { opacity: 1; transform: translateX(0); }
+.button:hover {
+    background: #F7B05B;
 }

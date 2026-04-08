@@ -73,7 +73,7 @@
 </main>
 
 <jsp:include page="footer.jsp"/>
-<script type="text/javascript" src="script/Regioni.js"></script>
+
 
 </body>
 </html>

@@ -5,12 +5,14 @@ header {
     display: flex;
     flex-direction: column; /* Mantiene i link sopra e la ricerca sotto, o viceversa */
     gap: 15px;
+    width :100%;
 }
 
 .header-links {
     display: flex;
     align-items: center;
-    width: 100%; /* Occupa tutta la larghezza */
+    width: 100%;
+    /* Occupa tutta la larghezza */
 }
 
 
@@ -20,6 +22,7 @@ header {
     padding: 5px 15px;
     background-color:#F7B058;
     border-radius:12px;
+
 }
 
 
@@ -32,6 +35,7 @@ header {
     justify-content: center;
     gap: 15px;
     padding-bottom: 5px;
+    width:100%;
 
 }
 
@@ -49,4 +53,19 @@ header {
     margin-left: auto;
     display: flex;
     gap: 10px;
+    width:100%;
+}
+
+@media (max-width: 768px) {
+    .header-links {
+        flex-direction: column;
+    }
+    #rightsection {
+        flex-direction: column;
+        align-items: center;
+        gap :0;
+        margin-left:0;
+
+    }
+
 }
