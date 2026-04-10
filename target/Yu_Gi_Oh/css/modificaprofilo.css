@@ -1,0 +1,93 @@
+
+body {
+    background-color: #1F1300;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+
+.registration-container {
+    background: #DFD6A7;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 520px;
+    margin: 40px auto;
+}
+
+
+fieldset {
+    border: solid 3px #AF9B46;
+}
+
+
+.biglabel {
+    color: #1F1300;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+label {
+    font-size: 100%;
+    letter-spacing: normal;
+    color: #AF9B46;
+    white-space: nowrap;
+}
+
+#usernamelabel {
+    color: #1F1300;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.input {
+    width: 50%;
+    padding: 6px 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1.5px solid #AF9B46;
+    border-radius: 5px;
+    background: #fff;
+    color: #1F1300;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #F7CE5B;
+    box-shadow: 0 0 0 3px rgba(247, 206, 91, 0.3);
+}
+
+.phoneGroup {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.button {
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 30%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #F7CE5B;
+    color: #1F1300;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: #F7B05B;
+}

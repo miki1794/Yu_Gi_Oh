@@ -18,6 +18,7 @@ public class CartaDao extends AbstractDAO {
             ps.setString(1, carta.getNome());
 
             ps.setFloat(6, carta.getPrezzo());
+            ps.setString(2, carta.getLink());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
@@ -34,6 +35,7 @@ public class CartaDao extends AbstractDAO {
             PreparedStatement ps=prepareStatement(connection,"Update_carta");
             ps.setString(1, carta.getNome());
             ps.setFloat(6, carta.getPrezzo());
+            ps.setString(2, carta.getLink());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
@@ -48,6 +50,7 @@ public class CartaDao extends AbstractDAO {
             Connection connection=getConnection();
             PreparedStatement ps=prepareStatement(connection,"Delete_carta");
             ps.setString(1, carta.getNome());
+            ps.setString(2, carta.getLink());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
@@ -72,6 +75,7 @@ public class CartaDao extends AbstractDAO {
                 Carta carta = new Carta();
                 carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
+                carta.setLink(result.getString("img_path"));
                 CarteList.add(carta);
 
             }
@@ -97,6 +101,7 @@ public class CartaDao extends AbstractDAO {
                carta= new Carta();
                 carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
+                carta.setLink(result.getString("img_path"));
             }
 
         } catch (SQLException e) {
@@ -119,6 +124,7 @@ public class CartaDao extends AbstractDAO {
                 carta= new Carta();
                 carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
+                carta.setLink(result.getString("img_path"));
             }
 
         } catch (SQLException e) {

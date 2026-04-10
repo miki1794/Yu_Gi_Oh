@@ -4,17 +4,18 @@ public class Carta {
     private int id;
     private String nome;
     private float prezzo;
+    private String link;
 
-    public Carta(int id, String nome, float prezzo) {
+    public Carta(int id, String nome, float prezzo,String link) {
         this.id = id;
         this.nome = nome;
-
+        this.link=link;
         this.prezzo=prezzo;
     }
-    public Carta( String nome, float prezzo) {
+    public Carta( String nome, float prezzo,String link) {
 
         this.nome = nome;
-
+        this.link=link;
         this.prezzo=prezzo;
     }
 
@@ -45,5 +46,11 @@ public class Carta {
     }
     public void setPrezzo(float prezzo) {
         this.prezzo = prezzo;
+    }
+    public String getLink() {
+        return link;
+    }
+    public void setLink(String link) {
+        this.link = link;
     }
 }
