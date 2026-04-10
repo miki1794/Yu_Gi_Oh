@@ -21,4 +21,11 @@ body{
     background: #DFD6A7;
     position:relative;
     font-family: 'Lobster', cursive;
+    display: flex;
+    flex-direction: column;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+

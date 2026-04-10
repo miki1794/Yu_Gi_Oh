@@ -1,34 +1,61 @@
 package Controller.Everyone;
+
+import Model.Bean.Carta;
+
+import Model.Dao.CartaDao;
+
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
 
-
-
-@WebServlet(name = "registrazione", value = "/registrazione")
+@WebServlet(name = "Prodotto", value = "/Prodotto")
 public class ProductServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/product.jsp");
-        dispatcher.forward(request, response);
-    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ids = request.getParameter("id");
+        Carta carta =null;
+        if(ids!=null){
+            try{
+                int id=Integer.parseInt(ids);
+                CartaDao service= new CartaDao();
+                carta=service.doRetrievebyID(id);
+                if(carta!=null){
+                    request.setAttribute("carta",carta);
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product.jsp");
+                    dispatcher.forward(request, response);
+                }
+                else{
+                    System.out.println("product not found");
+                }
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
 
-        String nomeUtente = request.getParameter("username");
-        String numeroTelefono = request.getParameter("NumeroDiTelefono");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String confirmPassword = request.getParameter("conferma-password");
-        String dataNascita = request.getParameter("DataDiNascita");
-        String nazione = request.getParameter("Nazione");//TODO risolvere per il numero di telefono
-        Date formattedDate = null;
+            }
+
+
+
+
+        }
+        else{ System.out.println("id not found in the request");}
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

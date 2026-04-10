@@ -29,14 +29,14 @@ public class PageAdminServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         if (session!=null){
-            Map<String, String> userData = (Map<String, String>) session.getAttribute("UserData");
+            Map<String, String> userData = (Map<String, String>) session.getAttribute("utente");
 
-            if (userData == null) response.sendRedirect("Homepage");
+            if (userData == null) response.sendRedirect("home");
             else{
-                String tipo = userData.get("tipo");
+                String tipo = userData.get("ruolo");
                 if(!"admin".equals(tipo)) response.sendRedirect("home"); //
                 else {
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("./jsp/pageAdmin.jsp");//da cambiare
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/pageAdmin.jsp");//da cambiare
                     dispatcher.forward(request, response);
                 }
             }

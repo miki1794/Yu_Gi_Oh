@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
-
+<img src="">
 
 </body>
 <jsp:include page="footer.jsp"></jsp:include>

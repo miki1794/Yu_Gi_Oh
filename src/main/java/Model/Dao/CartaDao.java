@@ -16,10 +16,7 @@ public class CartaDao extends AbstractDAO {
             Connection connection = getConnection();
             PreparedStatement ps=prepareStatement(connection,"save_carta");
             ps.setString(1, carta.getNome());
-            ps.setString(2, carta.getEffetto());
-            ps.setString(3, carta.getTipo());
-            ps.setInt(4, carta.getAttacco());
-            ps.setInt(5, carta.getDifesa());
+
             ps.setFloat(6, carta.getPrezzo());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
@@ -36,10 +33,6 @@ public class CartaDao extends AbstractDAO {
             Connection connection=getConnection();
             PreparedStatement ps=prepareStatement(connection,"Update_carta");
             ps.setString(1, carta.getNome());
-            ps.setString(2, carta.getEffetto());
-            ps.setString(3, carta.getTipo());
-            ps.setInt(4, carta.getAttacco());
-            ps.setInt(5, carta.getDifesa());
             ps.setFloat(6, carta.getPrezzo());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
@@ -78,10 +71,6 @@ public class CartaDao extends AbstractDAO {
             while (result.next()) {
                 Carta carta = new Carta();
                 carta.setNome(result.getString("nome"));
-                carta.setEffetto(result.getString("effetto"));
-                carta.setTipo(result.getString("tipo"));
-              carta.setAttacco(result.getInt("attacco"));
-                carta.setDifesa(result.getInt("difesa"));
                 carta.setPrezzo(result.getFloat("prezzo"));
                 CarteList.add(carta);
 
@@ -107,10 +96,28 @@ public class CartaDao extends AbstractDAO {
             if (result.next()) {
                carta= new Carta();
                 carta.setNome(result.getString("nome"));
-                carta.setEffetto(result.getString("effetto"));
-                carta.setTipo(result.getString("tipo"));
-                carta.setAttacco(result.getInt("attacco"));
-                carta.setDifesa(result.getInt("difesa"));
+                carta.setPrezzo(result.getFloat("prezzo"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return carta;
+
+    }
+    public Carta doRetrievebyID(int id) {
+        Carta carta = null;
+
+        try (Connection connection = getConnection();
+             PreparedStatement ps = prepareStatement(connection, "GET_CARTE_BY_ID")) {
+
+            ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
+
+            if (result.next()) {
+                carta= new Carta();
+                carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
             }
 

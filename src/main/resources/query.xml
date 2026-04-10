@@ -39,4 +39,7 @@
     <entry key="GET_CARTE_BY_NAME">
         SELECT * FROM Carta WHERE nome=?
     </entry>
+    <entry key="GET_CARTE_BY_ID">
+        SELECT * FROM Carta WHERE id=?
+    </entry>
 </properties>

@@ -59,8 +59,9 @@
 
 </div>
 
-<jsp:include page="footer.jsp"></jsp:include>
+
 <script src="${pageContext.request.contextPath}/script/SlideShow.js"></script>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 
 

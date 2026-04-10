@@ -21,7 +21,7 @@ import java.io.IOException;
                 session.invalidate();
             }
 
-            response.sendRedirect("/vnl-1.0-SNAPSHOT/Homepage");
+            response.sendRedirect(request.getContextPath() + "/Home");
         }
     }
 

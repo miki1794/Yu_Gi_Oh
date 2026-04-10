@@ -16,10 +16,15 @@
 footer{
     background-color: #1F1300;
     font-family: 'Lobster', cursive;
-    flex-direction: column; /* Mantiene i link sopra e la ricerca sotto, o viceversa */
+    flex-direction: column;
     gap: 15px;
     width :100%;
+    position: relative;
+    margin-top: auto;
 
+}
+.conteiner {
+    flex: 1;
 }
 .footer-links a{
     color: #DFD6A7;
