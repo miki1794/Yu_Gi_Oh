@@ -28,7 +28,7 @@
         VALUES (?, ?, ?, ?)
     </entry>
     <entry key="Update_carta">
-        UPDATE Carta SET nome=?,prezzo=?,link=? WHERE id=?
+        UPDATE Carta SET nome=?,prezzo=?,img_path=? WHERE id=?
     </entry>
     <entry key="Delete_carta">
         DELETE FROM Carta WHERE id=?
