@@ -134,5 +134,10 @@ public class CartaDao extends AbstractDAO {
         return carta;
 
     }
+    public ArrayList<Carta> search(String keyword) {
+        ArrayList<Carta> CarteList = new ArrayList<>();
+
+        return CarteList;
+    }
 
 }

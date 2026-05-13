@@ -32,8 +32,10 @@
     </div>
 
     <div class="search-box">
+        <form action="Search"method="get">
+
         <input type="text" placeholder="Cerca carta (es: Drago Bianco)...">
-        <button>Trova</button>
+        </form>
     </div>
 
     <script src="${pageContext.request.contextPath}/script/ProfileChanger.js"></script>

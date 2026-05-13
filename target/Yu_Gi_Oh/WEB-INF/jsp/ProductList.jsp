@@ -35,8 +35,8 @@
                 %>
                 <li>
                     <%
-                        String imgPath = product.getLink();
-                        String imgSrc = (imgPath == null || imgPath.trim().isEmpty()) ? "assets/pictureplaceholder.jpg" : imgPath;
+                        String img_Path = product.getLink();
+                        String imgSrc = (img_Path == null || img_Path.trim().isEmpty()) ? "assets/pictureplaceholder.jpg" : img_Path;
                     %>
                     <a href="Prodotto?id=<%= product.getId() %>">
                         <img src="<%= imgSrc %>" alt="<%= product.getNome()%>">
