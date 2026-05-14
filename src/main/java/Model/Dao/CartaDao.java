@@ -137,6 +137,30 @@ public class CartaDao extends AbstractDAO {
     public ArrayList<Carta> search(String keyword) {
         ArrayList<Carta> CarteList = new ArrayList<>();
 
+        try (Connection connection = getConnection();
+             PreparedStatement ps = prepareStatement(connection,"SEARCH_PRODUCT" )){
+            ps.setString(1, "%" + keyword + "%");
+            ps.setString(2, "%" + keyword + "%");
+            ps.setString(3, "%" + keyword + "%");
+
+            ResultSet result= ps.executeQuery();
+            while(result.next()){
+                Carta carta = new Carta();
+               carta.setId(result.getInt("id"));
+                carta.setPrezzo(result.getFloat("prezzo"));
+                carta.setNome(result.getString("nome"));
+                carta.setLink(result.getString("img_path"));
+                CarteList.add(carta);
+
+            }
+
+
+        }
+        catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Search Results: " + CarteList.size());
+
         return CarteList;
     }
 
