@@ -1,10 +1,8 @@
-
 body {
     background-color: #1F1300;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
 }
-
 
 .registration-container {
     background: #DFD6A7;
@@ -14,18 +12,15 @@ body {
     margin: 40px auto;
 }
 
-
 fieldset {
     border: solid 3px #AF9B46;
 }
-
 
 .biglabel {
     color: #1F1300;
     font-size: 20px;
     font-weight: 700;
 }
-
 
 label {
     font-size: 100%;
@@ -38,13 +33,11 @@ label {
     color: #1F1300;
 }
 
-
 .form-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 
 .input {
     width: 50%;
@@ -70,7 +63,6 @@ label {
     margin-bottom: 10px;
 }
 
-
 .button {
     border-radius: 10px;
     margin-top: 20px;
@@ -90,4 +82,46 @@ label {
 
 .button:hover {
     background: #F7B05B;
+}
+
+@media (max-width: 768px) {
+
+    .registration-container {
+        margin: 15px;
+        padding: 20px 15px;
+        border-radius: 6px;
+    }
+
+    fieldset {
+        border-width: 2px;
+        padding: 10px;
+    }
+
+    .biglabel {
+        font-size: 17px;
+    }
+
+    label {
+        white-space: normal;
+        font-size: 90%;
+    }
+
+    .input {
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 1rem;
+    }
+
+    .phoneGroup {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
 }

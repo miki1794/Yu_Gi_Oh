@@ -96,7 +96,7 @@ body {
 
 
 @media screen and (max-width: 768px) {
-    /* Lista Prodotti */
+
     .Product-list ul {
         grid-template-columns: 1fr;
         padding: 0 15px;

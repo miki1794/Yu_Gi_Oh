@@ -1,12 +1,12 @@
 package Model.Bean;
 
 public class Carta {
-    private int id;
+    private String id;
     private String nome;
     private float prezzo;
     private String link;
 
-    public Carta(int id, String nome, float prezzo,String link) {
+    public Carta(String id, String nome, float prezzo,String link) {
         this.id = id;
         this.nome = nome;
         this.link=link;
@@ -24,11 +24,11 @@ public class Carta {
 
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -73,7 +73,7 @@ public class CartaDao extends AbstractDAO {
             ResultSet result = ps.executeQuery();
             while (result.next()) {
                 Carta carta = new Carta();
-                carta.setId(result.getInt("id"));
+                carta.setId(result.getString("id"));
                 carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
                 carta.setLink(result.getString("img_path"));
@@ -100,6 +100,7 @@ public class CartaDao extends AbstractDAO {
 
             if (result.next()) {
                carta= new Carta();
+               carta.setId(result.getString("id"));
                 carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
                 carta.setLink(result.getString("img_path"));
@@ -123,6 +124,7 @@ public class CartaDao extends AbstractDAO {
 
             if (result.next()) {
                 carta= new Carta();
+                carta.setId(result.getString("id"));
                 carta.setNome(result.getString("nome"));
                 carta.setPrezzo(result.getFloat("prezzo"));
                 carta.setLink(result.getString("img_path"));
@@ -151,8 +153,7 @@ public class CartaDao extends AbstractDAO {
             while(result.next()) {
 
                 Carta carta = new Carta();
-
-                carta.setId(result.getInt("id"));
+                carta.setId(result.getString("id"));
                 carta.setPrezzo(result.getFloat("prezzo"));
                 carta.setNome(result.getString("nome"));
                 carta.setLink(result.getString("img_path"));

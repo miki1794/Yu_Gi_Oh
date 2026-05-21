@@ -49,7 +49,7 @@
                 <form action="Cart" method="post">
                     <label for="quantity">Quantity:</label>
                     <input type="number" id="quantity" name="quantity" value="1" min="1" max="100"><br>
-                    <input type="hidden" name="productID" value="<%=nomeCarta.getId() %>">
+                    <input type="hidden" name="cartaId"  id="cartaId" value="<%=nomeCarta.getId() %>">
                     <button type="submit">Aggiungi al carrello</button>
 
                 </form>

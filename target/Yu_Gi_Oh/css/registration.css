@@ -1,42 +1,67 @@
-
-fieldset{
-
+fieldset {
     border: solid 3px #DFD6A7;
-
 }
-label{
-    font-size:100%;
+
+label {
+    font-size: 100%;
     letter-spacing: normal;
     color: brown;
     white-space: nowrap;
 }
 
-
 #usernamelabel {
     color: #DFD6A7;
-
 }
-.button{
+
+.button {
     border-radius: 10px;
     margin-top: 20px;
     padding: 10px 20px;
     width: 30%;
     display: flex;
     align-self: center;
-
 }
 
-.phoneGroup{
+.phoneGroup {
     display: flex;
     gap: 30px;
 }
-.form-group{
+
+.form-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
-.input{
+
+.input {
     width: 50%;
 }
 
+@media (max-width: 768px) {
+
+    fieldset {
+        border-width: 2px;
+        padding: 10px;
+    }
+
+    label {
+        white-space: normal;
+        font-size: 90%;
+    }
+
+    .button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    .phoneGroup {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .input {
+        width: 100%;
+    }
+}

@@ -21,14 +21,13 @@ public class EditServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         Map map = (session != null) ? (Map) session.getAttribute("map") : null;
 
-        // Controllo se l'utente è loggato tramite la mappa
+
         if (map == null || !"true".equals(map.get("isLogged"))) {
             response.sendRedirect(request.getContextPath() + "/Home");
             return;
         }
 
-        // Recuperiamo l'oggetto Utente (assicurati che il login lo metta in sessione oltre alla mappa)
-        // Se il login mette solo la mappa, dovrai recuperare l'Utente dal DAO usando lo username della mappa
+
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null) {
             UtenteDao dao = new UtenteDao();
