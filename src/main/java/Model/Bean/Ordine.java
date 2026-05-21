@@ -116,4 +116,7 @@ public class Ordine {
     public void setPaese(String paese) {
         this.paese = paese;
     }
+    public Ordine() {
+
+    }
 }

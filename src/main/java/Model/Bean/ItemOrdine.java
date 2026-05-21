@@ -15,6 +15,10 @@ public class ItemOrdine {
         this.prezzo = prezzo;
     }
 
+    public ItemOrdine() {
+
+    }
+
     public String getId() {
         return id;
     }
