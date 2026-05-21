@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let profileChanger = document.getElementById('rightsection');
 
 
-    let isLogged = profileChanger.dataset.logged === "true";
+    let IsLogged = profileChanger.dataset.logged === "true";
     let username = profileChanger.dataset.username;
 
-    if (isLogged) {
+    if (IsLogged) {
         profileChanger.innerHTML = `
             <a href="editprofile">
                 <h3>Profilo ${username}</h3>

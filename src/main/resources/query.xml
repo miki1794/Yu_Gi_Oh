@@ -43,6 +43,6 @@
         SELECT * FROM Carta WHERE id=?
     </entry>
     <entry key="SEARCH_PRODUCT">
-        SELECT * FROM Carta WHERE nome LIKE? OR prezzo LIKE? OR id LIKE ?
+        SELECT * FROM Carta WHERE nome LIKE ?
     </entry>
 </properties>

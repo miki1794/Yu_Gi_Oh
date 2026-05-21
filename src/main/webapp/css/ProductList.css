@@ -1,0 +1,119 @@
+:root {
+    --vanilla: #DFD6A7;
+    --mustard: #F7CE5B;
+    --clay: #F7B05B;
+    --bronze: #AF9B46;
+    --coffee: #1F1300;
+    --white-soft: #fdfcf8;
+}
+
+body {
+    background-color: var(--white-soft);
+    color: var(--coffee);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.mainpage h1 {
+    font-family: 'Lobster', cursive;
+    color: var(--coffee);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.Product-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.Product-list li {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--vanilla);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 250px;
+}
+
+.Product-list li img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--mustard);
+    margin-bottom: 15px;
+}
+
+.Product-list li a {
+    text-decoration: none;
+    color: var(--coffee);
+    text-align: center;
+    padding: 0 10px;
+}
+
+.Product-list li strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--bronze);
+}
+
+.Product-list li .price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--coffee);
+    background-color: var(--mustard);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .page-container {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .mainpage h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .Product-list ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .Product-list li {
+        flex: 1 1 100%;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .Product-list li img {
+        height: 180px;
+    }
+
+    .Product-list li strong {
+        font-size: 1.1rem;
+    }
+
+    .Product-list li .price {
+        font-size: 1rem;
+    }
+}

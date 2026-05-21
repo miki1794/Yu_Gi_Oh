@@ -1,110 +1,144 @@
-.conteiner{
+
+{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
     background-color: #DFD6A7;
+}
+
+
+body .conteiner {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-
-
-
-
-
-
-
-
+    padding-bottom: 60px;
 }
-.slideshow{
-    border:solid 3px #F7CE5B;
-    background-color: #F7CE5B;
-    width: auto;
-    max-width:100% ;
-    min-height: 80vh;
+
+/* --- BOTTONE PRODOTTI --- */
+body .conteiner a {
+    text-decoration: none;
+    margin: 40px 0;
+    border: none; /
+    display: inline-block;
+}
+
+body .conteiner h1 {
+    font-family: 'Lobster', cursive;
+    background-color: #F7CE5B; /* Mustard */
+    color: #1F1300; /* Coffee Bean */
+    padding: 15px 45px;
+    border-radius: 15px;
+    border: 4px solid #AF9B46;
+    box-shadow: 0 6px 0 #AF9B46;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- SLIDESHOW --- */
+body .slideshow {
+    width: 90%;
+    max-width: 1000px;
+    height: 500px;
     position: relative;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    overflow:  hidden;
-
+    margin-bottom: 50px;
+    overflow: hidden;
+    border-radius: 25px;
+    border: 8px solid #F7CE5B;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-
-
-.titolo{
-    border: solid 3px #AF9B46;;
-    background-color: #AF9B46;
-    width: auto;
-}
-.testo{
-    border: solid 5px #F7B058;
-    background-color: #F7B058;
-    width: auto;
-
-}
-.slideshow img {
+body .slide {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-
 }
-.bottone-prodotti{
 
-    padding: 10px 20px;
+body .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.conteiner a {
-    align-self: center;
-    text-decoration: none;
-    border: 1px solid black;
-    padding: 4px 8px;
-    margin-top: 5%;
-    margin-bottom: 5%;
 
+body .titolo {
+    background-color: #AF9B46;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 20px 20px 0 0;
+    border: 4px solid #AF9B46;
+    text-align: center;
 }
-.left, .right {
+
+body .titolo h2 {
+    color: #ffffff;
+    font-family: 'Lobster', cursive;
+    margin: 0;
+    padding: 15px;
+    font-size: 2rem;
+}
+
+body .testo {
+    background-color: #F7B05B;
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 0 0 20px 20px;
+    border: 4px solid #AF9B46;
+    border-top: none;
+    text-align: center;
+}
+
+body .testo p {
+    margin: 0;
+    line-height: 1.8;
+    color: #1F1300;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+body .left, body .right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 2rem;
-    color: white;
-    background: rgba(0,0,0,0.4);
-    padding: 10px 16px;
-    user-select: none;
+    background: rgba(31, 19, 0, 0.6);
+    color: #ffffff;
+    padding: 15px;
     z-index: 10;
-    display: block;
-    line-height: 1;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.left  { left: 10px;  border-radius: 5px 3px 3px 5px; }
-.right { right: 10px; border-radius: 3px 5px 5px 3px; }
+body .left { left: 20px; }
+body .right { right: 20px; }
 
-.left::before  { content: "<"; }
-.right::before { content: ">"; }
-.slide{
-    display:none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.conteiner h1 {
-    color: #AF9B46;
+/* --- RESPONSIVE 768px --- */
+@media screen and (max-width: 768px) {
+    body .slideshow {
+        height: 300px;
+        width: 95%;
+        border-width: 5px;
+    }
 
+    body .conteiner h1 {
+        font-size: 1.8rem;
+        padding: 10px 25px;
+    }
 
-    @media (max-width: 768px) {
-        .slideshow {
-            min-height: 35vh;
-        }
+    body .titolo, body .testo {
+        width: 95%;
+    }
 
-        .left, .right {
-            font-size: 1rem;
-            padding: 4px 8px;
-        }
-
-        .conteiner h1 {
-            font-size: 1.4rem;
-            text-align: center;
-        }
-
-        .bottone-prodotti {
-            width: 100%;
-            text-align: center;
-        }
+    body .testo p {
+        font-size: 1rem;
+        padding: 5px;
     }
 }

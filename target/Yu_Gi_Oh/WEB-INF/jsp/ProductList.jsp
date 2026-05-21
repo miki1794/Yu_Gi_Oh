@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/ProductList.css">
 
     <title>ListaProdotti</title>
 </head>
@@ -38,10 +38,11 @@
                         String img_Path = product.getLink();
                         String imgSrc = (img_Path == null || img_Path.trim().isEmpty()) ? "assets/pictureplaceholder.jpg" : img_Path;
                     %>
-                    <a href="Prodotto?id=<%= product.getId() %>">
+                    <a href="${pageContext.request.contextPath}/Prodotto?id=<%= product.getId() %>">
                         <img src="<%= imgSrc %>" alt="<%= product.getNome()%>">
                     </a>
-                    <a href="Prodotto?id=<%= product.getId() %>">
+
+                    <a href="${pageContext.request.contextPath}/Prodotto?id=<%= product.getId() %>">
                         <strong><%= product.getNome() %></strong>
                     </a>- &euro;<%= product.getPrezzo() %>
                 </li>

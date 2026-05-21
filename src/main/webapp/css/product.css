@@ -1,0 +1,123 @@
+
+:root {
+    --vanilla: #DFD6A7;
+    --mustard: #F7CE5B;
+    --clay: #F7B05B;
+    --bronze: #AF9B46;
+    --coffee: #1F1300;
+    --white-soft: #fdfcf8;
+}
+
+body {
+    background-color: var(--white-soft);
+    color: var(--coffee);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.Product-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.Product-list li {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--vanilla);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.Product-list li img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--mustard);
+}
+
+.Product-list li strong {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+
+.conteiner {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid var(--vanilla);
+}
+
+.immagine-prodotto {
+    flex: 1;
+}
+
+.immagine-prodotto img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 5px solid var(--vanilla);
+}
+
+.dettagli {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dettagli p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--vanilla);
+}
+
+.dettagli strong {
+    color: var(--bronze);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Lista Prodotti */
+    .Product-list ul {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .conteiner {
+        flex-direction: column;
+        margin: 15px;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .immagine-prodotto, .dettagli {
+        width: 100%;
+    }
+
+    .immagine-prodotto img {
+        max-width: 100%;
+    }
+
+    .dettagli {
+        text-align: center;
+    }
+}

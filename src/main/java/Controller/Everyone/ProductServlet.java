@@ -32,7 +32,7 @@ public class ProductServlet extends HttpServlet {
                 carta=service.doRetrievebyID(id);
                 if(carta!=null){
                     request.setAttribute("carta",carta);
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/product.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/product.jsp");
                     dispatcher.forward(request, response);
                 }
                 else{

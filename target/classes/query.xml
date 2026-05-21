@@ -42,4 +42,7 @@
     <entry key="GET_CARTE_BY_ID">
         SELECT * FROM Carta WHERE id=?
     </entry>
+    <entry key="SEARCH_PRODUCT">
+        SELECT * FROM Carta WHERE nome LIKE ?
+    </entry>
 </properties>
