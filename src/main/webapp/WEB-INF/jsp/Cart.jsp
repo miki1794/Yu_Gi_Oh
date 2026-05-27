@@ -53,8 +53,6 @@
                     <input type="submit" value="Aggiorna">
                 </form>
             </div>
-
-
             <div class="remove">
                 <form action="Cart" method="POST">
                     <input type="hidden" name="action" value="remove">
@@ -62,8 +60,6 @@
                     <input type="image" src="./assets/cestino.png" alt="Rimuovi">
                 </form>
             </div>
-
-
         </li>
         <%}
         }%>

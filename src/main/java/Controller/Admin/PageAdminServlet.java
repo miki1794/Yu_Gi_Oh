@@ -12,8 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Map;
 
-
-
 @WebServlet(name="PageAdmin", value="/PageAdmin")
 public class PageAdminServlet extends HttpServlet {
 

@@ -36,7 +36,6 @@ public class CarrelloServlet extends HttpServlet {
             session.setAttribute("cart", cart);
         }
 
-
         String action  = req.getParameter("action");
         String cartaId = req.getParameter("cartaId");
         if (cartaId == null) {
