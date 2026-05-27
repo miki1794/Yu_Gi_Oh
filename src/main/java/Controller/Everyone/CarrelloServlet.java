@@ -44,6 +44,7 @@ public class CarrelloServlet extends HttpServlet {
             return;
         }
 
+
         CartaDao cartaDao = new CartaDao();
         Carta carta = cartaDao.doRetrievebyID(Integer.parseInt(cartaId));
 

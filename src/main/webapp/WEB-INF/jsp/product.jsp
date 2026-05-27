@@ -12,6 +12,7 @@
         String nCarta=(nomeCarta!=null)?nomeCarta.getNome():"prodotto sconosciuto";
     %>
 
+
     <title><%= nCarta%></title>
 </head>
 
