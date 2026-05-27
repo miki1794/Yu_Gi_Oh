@@ -12,7 +12,7 @@ import java.sql.Date;
 import java.util.Map;
 
 @WebServlet(name = "EditServlet", value = "/editprofile")
-public class EditServlet extends HttpServlet {
+public class editServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
