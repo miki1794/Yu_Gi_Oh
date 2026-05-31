@@ -11,14 +11,12 @@
   <link rel="stylesheet" href="./css/pageAdmin.css">
   <title>Admin</title>
 </head>
-
 <body>
-
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="mainpage">
 
-  <h1>Benvenuto <%= userData.get("Username") %>!</h1>
+  <h1>Benvenuto <%= userData.get("username") %>!</h1>
 
   <div class="gestione">
     <a href="AddProduct">

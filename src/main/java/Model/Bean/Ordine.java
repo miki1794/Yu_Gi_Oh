@@ -1,5 +1,4 @@
 package Model.Bean;
-
 import java.sql.Date;
 
 public class Ordine {

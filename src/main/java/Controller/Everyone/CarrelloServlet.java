@@ -1,9 +1,7 @@
 package Controller.Everyone;
-
 import Model.Bean.Carta;
 import Model.Bean.ItemOrdine;
 import Model.Dao.CartaDao;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

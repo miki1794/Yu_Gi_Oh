@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>Carrello</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/Cart.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -53,7 +53,6 @@
                     <input type="submit" value="Aggiorna">
                 </form>
             </div>
-
             <div class="remove">
                 <form action="Cart" method="POST">
                     <input type="hidden" name="action" value="remove">
@@ -61,8 +60,6 @@
                     <input type="image" src="./assets/cestino.png" alt="Rimuovi">
                 </form>
             </div>
-
-
         </li>
         <%}
         }%>
@@ -73,7 +70,7 @@
         <% if (cart != null && !cart.isEmpty()) { %>
 
         <div class="procedere">
-            <a href=ConfermaOrdine>Procedi con l'acquisto</a>
+            <a href=CartOrder>Procedi con l'acquisto</a>
         </div>
 
         <% } else %>  <p>Carrello Vuoto</p>

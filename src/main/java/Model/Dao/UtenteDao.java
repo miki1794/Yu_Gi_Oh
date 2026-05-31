@@ -81,6 +81,7 @@ public class UtenteDao extends AbstractDAO {
 
                 if (result.next()) {
                     utente= new Utente();
+                    utente.setIdUtente(result.getString("id"));
                     utente.setNomeUtente(result.getString("username"));
                     utente.setEmail(result.getString("email"));
                     utente.setPassword(result.getString("password"));
@@ -108,6 +109,7 @@ public class UtenteDao extends AbstractDAO {
             ResultSet result = ps.executeQuery();
             while (result.next()) {
                 Utente utente = new Utente();
+                utente.setIdUtente(result.getString("id"));
                 utente.setNomeUtente(result.getString("username"));
                 utente.setPassword(result.getString("password"));
                 utente.setEmail(result.getString("email"));
@@ -139,6 +141,7 @@ public class UtenteDao extends AbstractDAO {
 
             if (result.next()) {
                 utente= new Utente();
+                utente.setIdUtente(result.getString("id"));
                 utente.setNomeUtente(result.getString("username"));
                 utente.setEmail(result.getString("email"));
                 utente.setPassword(result.getString("password"));
@@ -170,6 +173,7 @@ public class UtenteDao extends AbstractDAO {
 
             if (result.next()) {
                 utente= new Utente();
+                utente.setIdUtente(result.getString("id"));
                 utente.setNomeUtente(result.getString("username"));
                 utente.setEmail(result.getString("email"));
                 utente.setPassword(result.getString("password"));
