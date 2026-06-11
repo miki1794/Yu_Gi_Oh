@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #DFD6A7;
+    font-family: sans-serif;
+}
+
+.mainpage {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #fffef5;
+    border-radius: 12px;
+    border: 1px solid #AF9B46;
+}
+
+.mainpage h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1F1300;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #F7CE5B;
+}
+
+.gestione {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.gestione a {
+    text-decoration: none;
+    flex: 1;
+}
+
+.addproductbtn,
+.manageordersbtn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.addproductbtn {
+    background: #1F1300;
+    color: #F7CE5B;
+}
+
+.addproductbtn:hover {
+    background: #AF9B46;
+    color: #1F1300;
+}
+
+.manageordersbtn {
+    background: #F7CE5B;
+    color: #1F1300;
+    border: 1px solid #AF9B46;
+}
+
+.manageordersbtn:hover {
+    background: #F7B05B;
+}
+
+@media (max-width: 768px) {
+
+    .mainpage {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .gestione {
+        flex-direction: column;
+    }
+
+    .gestione a {
+        width: 100%;
+    }
+}

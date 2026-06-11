@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import Model.Bean.Carta;
 import Model.Bean.ItemOrdine;
 
 public class ItemOrdineDao  extends AbstractDAO {
@@ -66,8 +65,8 @@ public class ItemOrdineDao  extends AbstractDAO {
     }
 
 
-    public ItemOrdine doRetrievebyID(String id) {
-        ItemOrdine ordine = null;
+    public ArrayList<ItemOrdine> doRetrievebyID(String id, String orderId) {
+        ArrayList<ItemOrdine> ordini = new ArrayList<>();
 
         try (Connection connection = getConnection();
              PreparedStatement ps = prepareStatement(connection, "GET_ITEM_BY_ID")) {
@@ -75,21 +74,21 @@ public class ItemOrdineDao  extends AbstractDAO {
             ps.setString(1, id);
             ResultSet result = ps.executeQuery();
 
-            if (result.next()) {
-                ordine = new ItemOrdine();
+            while (result.next()) {  // while invece di if
+                ItemOrdine ordine = new ItemOrdine();
                 ordine.setId(result.getString("id"));
                 ordine.setUtente(result.getString("utente"));
                 ordine.setNomeCarta(result.getString("nomeCarta"));
                 ordine.setQuantita(result.getInt("quantita"));
                 ordine.setPrezzo(result.getFloat("prezzo"));
+                ordini.add(ordine);
             }
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
-        return ordine;
+        return ordini;
     }
-
 
 }
