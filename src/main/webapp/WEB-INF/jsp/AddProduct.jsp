@@ -1,3 +1,4 @@
+
 <%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page import="java.util.HashMap" %>
 <%
@@ -10,7 +11,6 @@
         return;
     }
 %>
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/addproduct.css">
+    <link rel="stylesheet" href="./css/AddProduct.css">
     <title>Aggiungi Prodotto</title>
 </head>
 <body>

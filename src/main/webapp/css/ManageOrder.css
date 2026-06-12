@@ -1,0 +1,123 @@
+.manageorderscontainer {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.manageorderscontainer h2 {
+    font-family: 'Lobster', cursive;
+    color: #1F1300;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.manageorderscontainer table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #AF9B46;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.manageorderscontainer table th {
+    background-color: #F7CE5B;
+    color: #1F1300;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Lobster', cursive;
+}
+
+.manageorderscontainer table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #DFD6A7;
+    color: #1F1300;
+    font-size: 0.95rem;
+    background-color: #fff;
+}
+
+.manageorderscontainer table tr:last-child td {
+    border-bottom: none;
+}
+
+.manageorderscontainer table tr:hover td {
+    background-color: #fdfcf8;
+}
+
+.orderdetailsbtn {
+    background-color: #F7CE5B;
+    color: #1F1300;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Lobster', cursive;
+}
+
+.orderdetailsbtn:hover {
+    background-color: #F7B05B;
+    color: #1F1300;
+}
+
+@media (max-width: 768px) {
+    .manageorderscontainer {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .manageorderscontainer h2 {
+        font-size: 1.6rem;
+    }
+
+    .manageorderscontainer table thead {
+        display: none;
+    }
+
+    .manageorderscontainer table,
+    .manageorderscontainer table tbody,
+    .manageorderscontainer table tr,
+    .manageorderscontainer table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .manageorderscontainer table tr {
+        background-color: #fff;
+        border: 2px solid #AF9B46;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .manageorderscontainer table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #DFD6A7;
+        font-size: 0.9rem;
+    }
+
+    .manageorderscontainer table td:last-child {
+        border-bottom: none;
+    }
+
+    .manageorderscontainer table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #AF9B46;
+        display: block;
+        margin-bottom: 4px;
+        font-family: 'Lobster', cursive;
+    }
+
+    .orderdetailsbtn {
+        width: 100%;
+        padding: 10px;
+    }
+}

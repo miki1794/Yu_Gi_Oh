@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/modifyproduct.css">
+  <link rel="stylesheet" href="./css/modifyProduct.css">
   <title>Modifica Prodotto</title>
 </head>
 <body>
