@@ -31,7 +31,7 @@ public class ModifyProductServlet extends HttpServlet{
         request.setAttribute("product", product);
 
 
-        request.getRequestDispatcher("/jsp/modifyproduct.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/modifyproduct.jsp").forward(request, response);
         //fare jsp
     }
 

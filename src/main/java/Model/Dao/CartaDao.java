@@ -3,8 +3,6 @@ package Model.Dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-
 import Model.Bean.Carta;
 import Model.Bean.Utente;
 

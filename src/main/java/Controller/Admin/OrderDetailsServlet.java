@@ -50,7 +50,7 @@ public class OrderDetailsServlet extends HttpServlet{
             request.setAttribute("orderItems", orderItems);
             request.setAttribute("products", products);
             request.setAttribute("order", order);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/orderDetails.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/orderDetails.jsp");
             dispatcher.forward(request, response);
         }catch(Exception e){
             System.out.println(e.getMessage());
