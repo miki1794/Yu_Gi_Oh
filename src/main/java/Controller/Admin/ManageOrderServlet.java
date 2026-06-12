@@ -23,7 +23,7 @@ public class ManageOrderServlet  extends HttpServlet{
 
         request.setAttribute("orders", orders);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/manageorder.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/ManageOrder.jsp");
         dispatcher.forward(request, response); //fare jsp di manageorder
     }
 

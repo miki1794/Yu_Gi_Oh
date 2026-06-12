@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import Model.Dao.OrdineDao;
 
 
-@WebServlet(name="UpdateStatus", value="UpdateStatus")
+@WebServlet(name="UpdateStatus", value="/UpdateStatus")
 public class UpdateStatusServlet extends HttpServlet{
     private OrdineDao orderDao = new OrdineDao();
 

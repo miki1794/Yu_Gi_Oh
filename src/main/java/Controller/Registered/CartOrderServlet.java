@@ -40,8 +40,8 @@ public class CartOrderServlet extends HttpServlet {
         HttpSession session = request.getSession();
         System.out.println("Session ID: " + session.getId());
 
-        Map<String, String> userData =
-                (Map<String, String>) session.getAttribute("map");
+        @SuppressWarnings("unchecked")
+        Map<String, String> userData = (Map<String, String>) session.getAttribute("map");
 
         System.out.println("UserData: " + userData);
 
@@ -59,11 +59,6 @@ public class CartOrderServlet extends HttpServlet {
                 Ordine ordine = new Ordine();
 
                 System.out.println("PARAM nome: " + request.getParameter("nome"));
-                System.out.println("PARAM cognome: " + request.getParameter("cognome"));
-                System.out.println("PARAM via: " + request.getParameter("via"));
-                System.out.println("PARAM civico: " + request.getParameter("civico"));
-                System.out.println("PARAM cap: " + request.getParameter("cap"));
-                System.out.println("PARAM paese: " + request.getParameter("paese"));
 
                 ordine.setUtente(utente.getIdUtente());
                 ordine.setNome(request.getParameter("nome"));
@@ -75,15 +70,11 @@ public class CartOrderServlet extends HttpServlet {
                 ordine.setStato("in attesa");
                 ordine.setDataOrdine(Date.valueOf(LocalDate.now()));
 
-                System.out.println("Ordine creato (prima del save): " + ordine);
+                @SuppressWarnings("unchecked")
+                List<ItemOrdine> carrello = (List<ItemOrdine>) session.getAttribute("cart");
 
-                List<ItemOrdine> carrello =
-                        (List<ItemOrdine>) session.getAttribute("cart");
-
-                System.out.println("Carrello raw: " + carrello);
-
-                if (carrello == null) {
-                    System.out.println("❌ ERRORE: carrello NULL");
+                if (carrello == null || carrello.isEmpty()) {
+                    System.out.println("❌ ERRORE: carrello NULL o vuoto");
                     response.getWriter().println("Carrello vuoto.");
                     return;
                 }
@@ -91,41 +82,45 @@ public class CartOrderServlet extends HttpServlet {
                 float totale = 0;
 
                 for (ItemOrdine item : carrello) {
-                    System.out.println("ITEM: " + item);
-                    System.out.println("Prezzo item: " + item.getPrezzo());
-
+                    // Nota: Assicurati che se la quantità è > 1, il prezzo rifletta il totale per quell'item.
+                    // Se 'prezzo' è il prezzo unitario, qui dovresti fare: totale += (item.getPrezzo() * item.getQuantita());
                     totale += item.getPrezzo();
                 }
 
                 System.out.println("TOTALE CALCOLATO: " + totale);
 
+                ordine.setPrezzoTot(totale);
+
                 OrdineDao ordineDao = new OrdineDao();
                 ItemOrdineDao itemOrdineDao = new ItemOrdineDao();
-
-                ordine.setPrezzoTot(totale);
 
                 System.out.println("Salvo ordine...");
                 ordineDao.doSave(ordine);
                 System.out.println("Ordine salvato");
 
-                ArrayList<Ordine> ordini =
-                        ordineDao.doRetrievebyUtente(utente.getIdUtente());
-                System.out.println(utente.getIdUtente());
-                System.out.println("Ordini trovati: " + ordini);
+                ArrayList<Ordine> ordini = ordineDao.doRetrievebyUtente(utente.getIdUtente());
 
-                String ordineId = ordini.getLast().getId();
+                // Compatibilità: usiamo get(size - 1) invece di getLast() per sicurezza su versioni Java precedenti alla 21
+                Ordine ultimoOrdine = ordini.get(ordini.size() - 1);
+
+                // Parsing dell'ID in intero.
+                // (Se il tuo Bean Ordine restituisce già un int, puoi togliere il parseInt e fare: int ordineId = ultimoOrdine.getId();)
+                int ordineId = Integer.parseInt(String.valueOf(ultimoOrdine.getId()));
 
                 System.out.println("ULTIMO ORDINE ID: " + ordineId);
 
                 for (ItemOrdine item : carrello) {
-                    System.out.println("Salvo item: " + item);
+                    System.out.println("Salvo item: " + item.getNomeCarta());
 
-                    item.setId(ordineId);
-                    item.setUtente(utente.getIdUtente());
+                    // 🔥 MODIFICHE CRITICHE QUI 🔥
+                    // 1. Usiamo setOrdineId (chiave esterna) invece di setId (chiave primaria auto increment)
+                    item.setOrdineId(ordineId);
+
+                    // 2. Impostiamo l'utente
+                    item.setUtente(Integer.parseInt(utente.getIdUtente()));
 
                     itemOrdineDao.doSave(item);
-
-                    System.out.println("Item salvato: " + item);
+                    System.out.println("Item salvato con successo!");
                 }
 
                 session.removeAttribute("cart");
@@ -137,7 +132,6 @@ public class CartOrderServlet extends HttpServlet {
             } catch (Exception e) {
                 System.out.println("❌ ERRORE GENERALE:");
                 e.printStackTrace();
-
                 response.getWriter().println("Errore nell'inserimento dell'ordine.");
             }
 

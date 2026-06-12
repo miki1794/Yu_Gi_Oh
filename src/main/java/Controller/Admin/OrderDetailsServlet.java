@@ -33,7 +33,7 @@ public class OrderDetailsServlet extends HttpServlet{
         try{
             String orderId = request.getParameter("id");
             Ordine order = orderDao.doRetrieveById(orderId);
-            ArrayList<ItemOrdine> orderItems = orderItemsDao.doRetrievebyID(orderId, order.getNome());
+            ArrayList<ItemOrdine> orderItems = orderItemsDao.doRetrieveByID(orderId, order.getNome());
             System.out.println("order items retrieved"+orderItems.size());
 
             ArrayList<Carta> products = new ArrayList<>();
@@ -50,7 +50,7 @@ public class OrderDetailsServlet extends HttpServlet{
             request.setAttribute("orderItems", orderItems);
             request.setAttribute("products", products);
             request.setAttribute("order", order);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/orderDetails.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/OrderDetails.jsp");
             dispatcher.forward(request, response);
         }catch(Exception e){
             System.out.println(e.getMessage());

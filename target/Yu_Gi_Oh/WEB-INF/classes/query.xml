@@ -134,23 +134,27 @@
 
 
     <entry key="INSERT_ORDERITEMS">
-        INSERT INTO ItemOrdine(id, utente, nomeCarta, quantita, prezzo)
+        INSERT INTO ItemOrdine(ordine_id, utente, nomeCarta, quantita, prezzo)
         VALUES (?, ?, ?, ?, ?)
     </entry>
 
     <entry key="UPDATE_ORDERITEMS">
         UPDATE ItemOrdine
         SET quantita=?, prezzo=?
-        WHERE id=? AND utente=? AND nomeCarta=?
+        WHERE ordine_id=? AND utente=?
     </entry>
 
     <entry key="DELETE_ORDERITEMS">
         DELETE FROM ItemOrdine
-        WHERE id=? AND utente=? AND nomeCarta=?
+        WHERE ordine_id=? AND utente=?
     </entry>
 
     <entry key="GET_ITEM_BY_ID">
         SELECT * FROM ItemOrdine WHERE id=?
+    </entry>
+
+    <entry key="GET_ITEM_BY_ORDINE">
+        SELECT * FROM ItemOrdine WHERE ordine_id=?
     </entry>
 
 </properties>

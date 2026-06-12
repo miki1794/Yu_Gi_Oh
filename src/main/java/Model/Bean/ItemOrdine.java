@@ -1,38 +1,37 @@
-package Model.Bean;
 
+package Model.Bean;
+import java.sql.Date;
 public class ItemOrdine {
-    private String id;
-    private String Utente;
-    private String nomeCarta;
+
+    private int id;              // AUTO_INCREMENT (puoi anche NON usarlo nei set)
+    private int ordineId;        // FK ordine
+    private int utente;          // FK utente
+    private String nomeCarta;    // varchar
     private int quantita;
     private float prezzo;
 
-    public ItemOrdine(String id, String utente, String nomeCarta, int quantita, float prezzo) {
-        this.id = id;
-        Utente = utente;
-        this.nomeCarta = nomeCarta;
-        this.quantita = quantita;
-        this.prezzo = prezzo;
-    }
-
-    public ItemOrdine() {
-
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUtente() {
-        return Utente;
+    public int getOrdineId() {
+        return ordineId;
     }
 
-    public void setUtente(String utente) {
-        Utente = utente;
+    public void setOrdineId(int ordineId) {
+        this.ordineId = ordineId;
+    }
+
+    public int getUtente() {
+        return utente;
+    }
+
+    public void setUtente(int utente) {
+        this.utente = utente;
     }
 
     public String getNomeCarta() {

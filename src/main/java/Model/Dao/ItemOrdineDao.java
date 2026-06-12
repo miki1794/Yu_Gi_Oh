@@ -8,79 +8,90 @@ import java.util.ArrayList;
 
 import Model.Bean.ItemOrdine;
 
-public class ItemOrdineDao  extends AbstractDAO {
+public class ItemOrdineDao extends AbstractDAO {
 
-    public boolean doSave(ItemOrdine orderItems) {
+    public boolean doSave(ItemOrdine item) {
 
         try (Connection connection = getConnection();
              PreparedStatement ps = prepareStatement(connection, "INSERT_ORDERITEMS")) {
 
-            ps.setInt(1,Integer.parseInt(orderItems.getId()));
-            ps.setInt(2, Integer.parseInt(orderItems.getUtente()));
-            ps.setInt(3, Integer.parseInt(orderItems.getNomeCarta()));
-            ps.setInt(4, orderItems.getQuantita());
-            ps.setFloat(5, orderItems.getPrezzo());
+            // 🔥 ORDINE ID (OBBLIGATORIO)
+            ps.setInt(1, item.getOrdineId());
 
-            int rowsAffected = ps.executeUpdate();
-            return rowsAffected > 0;
+            ps.setInt(2, item.getUtente());
+
+            ps.setString(3, item.getNomeCarta());
+
+            ps.setInt(4, item.getQuantita());
+
+            ps.setFloat(5, item.getPrezzo());
+
+            return ps.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("doSave ERROR: " + e.getMessage());
             return false;
-
         }
-
     }
 
-    public boolean doUpdate(ItemOrdine orderItems) {
+    public boolean doUpdate(ItemOrdine item) {
 
         try (Connection connection = getConnection();
              PreparedStatement ps = prepareStatement(connection, "UPDATE_ORDERITEMS")) {
 
-            ps.setInt(4, orderItems.getQuantita());
-            ps.setFloat(5, orderItems.getPrezzo());
+            ps.setInt(1, item.getQuantita());
+            ps.setFloat(2, item.getPrezzo());
+            ps.setInt(3, item.getOrdineId());
+            ps.setInt(4, item.getUtente());
 
-            int rowsAffected = ps.executeUpdate();
-            return rowsAffected > 0;
+            return ps.executeUpdate() > 0;
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("doUpdate ERROR: " + e.getMessage());
             return false;
         }
     }
 
-    public boolean delete(ItemOrdine orderItems) {
+    public boolean delete(ItemOrdine item) {
 
         try (Connection connection = getConnection();
              PreparedStatement ps = prepareStatement(connection, "DELETE_ORDERITEMS")) {
 
-            ps.setInt(1, Integer.parseInt(orderItems.getId()));
-            ps.setInt(2, Integer.parseInt(orderItems.getUtente()));
+            ps.setInt(1, item.getOrdineId());
+            ps.setInt(2, item.getUtente());
 
-            int rowsAffected = ps.executeUpdate();
-            return rowsAffected > 0;
+            return ps.executeUpdate() > 0;
+
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("delete ERROR: " + e.getMessage());
             return false;
         }
     }
-
-
-    public ArrayList<ItemOrdine> doRetrievebyID(String id, String orderId) {
+    public ArrayList<ItemOrdine> doRetrieveByID(String id, String orderId) {
         ArrayList<ItemOrdine> ordini = new ArrayList<>();
 
         try (Connection connection = getConnection();
              PreparedStatement ps = prepareStatement(connection, "GET_ITEM_BY_ID")) {
 
+            // Imposta l'id come stringa, esattamente come richiesto
             ps.setString(1, id);
+
+            // Faccio notare che "orderId" è tra i parametri del metodo ma non viene
+            // passato al PreparedStatement. Se la tua query in XML lo richiede,
+            // dovrai aggiungere: ps.setString(2, orderId);
+
             ResultSet result = ps.executeQuery();
 
-            while (result.next()) {  // while invece di if
+            while (result.next()) {  // while invece di if, come richiesto
                 ItemOrdine ordine = new ItemOrdine();
-                ordine.setId(result.getString("id"));
-                ordine.setUtente(result.getString("utente"));
+
+                // I setter usano String come da tuo snippet
+                ordine.setId(Integer.parseInt(result.getString("ordine_id")));
+                ordine.setUtente(Integer.parseInt(result.getString("utente")));
                 ordine.setNomeCarta(result.getString("nomeCarta"));
                 ordine.setQuantita(result.getInt("quantita"));
                 ordine.setPrezzo(result.getFloat("prezzo"));
+
                 ordini.add(ordine);
             }
 
@@ -91,4 +102,35 @@ public class ItemOrdineDao  extends AbstractDAO {
         return ordini;
     }
 
+    public ArrayList<ItemOrdine> doRetrieveByOrdineId(int ordineId) {
+
+        ArrayList<ItemOrdine> items = new ArrayList<>();
+
+        try (Connection connection = getConnection();
+             PreparedStatement ps = prepareStatement(connection, "GET_ITEM_BY_ORDINE")) {
+
+            ps.setInt(1, ordineId);
+
+            ResultSet result = ps.executeQuery();
+
+            while (result.next()) {
+
+                ItemOrdine item = new ItemOrdine();
+
+                item.setId(result.getInt("id"));
+                item.setOrdineId(result.getInt("ordine_id"));
+                item.setUtente(result.getInt("utente"));
+                item.setNomeCarta(result.getString("nomeCarta"));
+                item.setQuantita(result.getInt("quantita"));
+                item.setPrezzo(result.getFloat("prezzo"));
+
+                items.add(item);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("retrieve ERROR: " + e.getMessage());
+        }
+
+        return items;
+    }
 }
