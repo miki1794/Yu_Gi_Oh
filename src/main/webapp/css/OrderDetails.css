@@ -6,7 +6,7 @@
 
 .orderdetails h2 {
     font-family: 'Lobster', cursive;
-    color: var(--coffee);
+    color: #1F1300;
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
@@ -14,14 +14,14 @@
 
 .orderdetails h3 {
     font-family: 'Lobster', cursive;
-    color: var(--bronze);
+    color: #AF9B46;
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
 
 .orderdetails > p {
     background-color: #fff;
-    border: 1px solid var(--vanilla);
+    border: 1px solid #DFD6A7;
     border-radius: 10px;
     padding: 10px 20px;
     margin-bottom: 10px;
@@ -29,12 +29,12 @@
 }
 
 .orderdetails > p strong {
-    color: var(--bronze);
+    color: #AF9B46;
 }
 
 .update {
     background-color: #fff;
-    border: 1px solid var(--vanilla);
+    border: 1px solid #DFD6A7;
     border-radius: 10px;
     padding: 20px;
     margin: 20px 0;
@@ -52,34 +52,34 @@
 
 .update select {
     padding: 8px 12px;
-    border: 1px solid var(--vanilla);
+    border: 1px solid #DFD6A7;
     border-radius: 8px;
     font-size: 1rem;
-    background-color: var(--white-soft);
-    color: var(--coffee);
+    background-color: #fdfcf8;
+    color: #1F1300;
     cursor: pointer;
 }
 
 .update select:focus {
     outline: none;
-    border-color: var(--mustard);
+    border-color: #F7CE5B;
     box-shadow: 0 0 0 3px rgba(247, 206, 91, 0.3);
 }
 
 .update input[type="submit"] {
-    background-color: var(--mustard);
-    color: var(--coffee);
+    background-color: #F7CE5B;
+    color: #1F1300;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    font-family: 'Lobster', cursive;
 }
 
 .update input[type="submit"]:hover {
-    background-color: var(--clay);
+    background-color: #F7CE5B;
 }
 
 .Product-list ul {
@@ -92,7 +92,7 @@
 
 .product-item {
     background-color: #fff;
-    border: 1px solid var(--vanilla);
+    border: 1px solid #DFD6A7;
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -107,7 +107,7 @@
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-bottom: 4px solid var(--mustard);
+    border-bottom: 4px solid #F7CE5B;
     margin-bottom: 10px;
 }
 
@@ -119,7 +119,7 @@
 }
 
 .product-item strong {
-    color: var(--bronze);
+    color: #AF9B46;
 }
 
 @media (max-width: 768px) {

@@ -1,11 +1,9 @@
-
 body {
     background: linear-gradient(to bottom, #DFD6A7 67%, #ece4be 100%);
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Lobster', cursive;
 }
-
 
 .login-container {
     color: #1F1300;
@@ -22,9 +20,9 @@ body {
 }
 
 fieldset {
-    border: none;
-    border-radius: 10px;
-    background-color: #F7CE5B;
+    border: 2px solid #AF9B46;
+    border-radius: 15px;
+    background-color: #fff;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -33,6 +31,7 @@ legend {
     text-align: center;
     font-size: 2rem;
     font-family: 'Lobster', cursive;
+    color: #1F1300;
     padding: 0 10px;
 }
 
@@ -43,27 +42,39 @@ legend {
     margin-bottom: 20px;
 }
 
+.form-group label {
+    font-family: 'Lobster', cursive;
+    color: #AF9B46;
+    font-size: 1rem;
+}
+
 .error-message {
     color: #d9534f;
     font-size: 0.8rem;
     height: 1rem;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .input {
     color: #1F1300;
-    background-color: #DFD6A7;
+    background-color: #fff;
     text-align: center;
     border-radius: 10px;
     width: 100%;
     box-sizing: border-box;
     height: 40px;
-    border: 1px solid transparent;
-    transition: border 0.3s;
+    border: 2px solid #AF9B46;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
 }
 
 .input:focus {
     outline: none;
-    border: 1px solid #1F1300;
+    background-color: #fff;
+}
+
+.input:hover {
+    background-color: #fff;
 }
 
 .form-actions {
@@ -75,28 +86,22 @@ legend {
 }
 
 .button {
-    background-color: #DFD6A7;
+    background-color: #F7CE5B;
     color: #1F1300;
     border-radius: 10px;
     width: 45%;
     padding: 10px;
     border: none;
     cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.1s, background-color 0.2s;
+    font-family: 'Lobster', cursive;
+    font-size: 1rem;
 }
 
 .button:hover {
-    background-color: #d3c88b;
-    transform: scale(1.02);
-}
-
-.button:active {
-    transform: scale(0.98);
+    background-color: #F7CE5B;
 }
 
 @media (max-width: 768px) {
-
     .login-container {
         padding: 5% 4%;
         align-items: flex-start;
@@ -110,7 +115,7 @@ legend {
 
     fieldset {
         padding: 20px 15px;
-        border-radius: 8px;
+        border-radius: 10px;
     }
 
     legend {

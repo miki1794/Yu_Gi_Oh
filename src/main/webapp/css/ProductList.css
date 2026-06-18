@@ -82,6 +82,17 @@ body {
     margin-top: 10px;
 }
 
+.Product-list li .price:hover {
+    background-color: var(--mustard);
+}
+
+.Product-list li img:hover {
+    opacity: 1;
+}
+
+input:hover {
+    background-color: #DFD6A7;
+}
 
 @media (max-width: 768px) {
     .page-container {

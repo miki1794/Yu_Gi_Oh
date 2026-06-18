@@ -47,7 +47,6 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
 .addproductbtn {
@@ -56,8 +55,8 @@ body {
 }
 
 .addproductbtn:hover {
-    background: #AF9B46;
-    color: #1F1300;
+    background: #1F1300;
+    color: #F7CE5B;
 }
 
 .manageordersbtn {
@@ -67,11 +66,10 @@ body {
 }
 
 .manageordersbtn:hover {
-    background: #F7B05B;
+    background: #F7CE5B;
 }
 
 @media (max-width: 768px) {
-
     .mainpage {
         margin: 1rem;
         padding: 1.5rem;
