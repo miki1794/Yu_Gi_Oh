@@ -34,9 +34,16 @@ header {
 .search-box {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     padding-bottom: 5px;
     width: 100%;
+}
+
+.search-box label {
+    color: #1F1300 !important;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .search-box input:hover {

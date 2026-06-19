@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/error.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/error.css">
     <title>Error Page</title>
 </head>
 <body>
@@ -15,7 +16,8 @@
             <h1>Errore</h1>
         </div>
         <div class="error">
-            <h2>Si è verificato un errore</h2>
+            <h2>Si è verificato un errore</h2>
+            <a href="${pageContext.request.contextPath}/Home">Torna alla Home</a>
         </div>
     </div>
 </div>

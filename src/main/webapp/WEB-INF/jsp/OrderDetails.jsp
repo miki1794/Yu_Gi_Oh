@@ -31,10 +31,12 @@
     <form action="${pageContext.request.contextPath}/UpdateStatus" method="post">
       <input type="hidden" name="id" value="<%= order.getId() %>">
       <label for="selectStato" class="sr-only">Cerca:</label>
-      <select name="status" id="selectStato">
-        <option value="Elaborando">Elaborando</option>
-        <option value="Spedito">Spedito</option>
-        <option value="Consegnato">Consegnato</option>
+      <select name="stato" id="selectStato">
+        <option value="in attesa">In attesa</option>
+        <option value="confermato">Confermato</option>
+        <option value="spedito">Spedito</option>
+        <option value="consegnato">Consegnato</option>
+        <option value="annullato">Annullato</option>
       </select>
       <input type="submit" value="Update Status">
     </form>

@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/modifyProduct.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/modifyProduct.css">
   <title>Modifica Prodotto</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div class="mainpage">
   <h2>Modifica Prodotto</h2>
 
-  <form action="UpdateProduct" method="POST">
+  <form action="${pageContext.request.contextPath}/UpdateProduct" method="POST">
 
     <%
       Carta product = (Carta) request.getAttribute("product");
@@ -45,8 +45,6 @@
           <label for="prezzo">Prezzo:</label>
           <input type="number" id="prezzo" name="prezzo" value="<%= product.getPrezzo() %>" required />
         </div>
-
-
 
         <button type="submit">Aggiorna Prodotto</button>
       </div>

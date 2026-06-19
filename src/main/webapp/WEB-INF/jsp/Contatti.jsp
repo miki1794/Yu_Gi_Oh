@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/Contatti.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Contatti.css">
     <title>Contact us</title>
 </head>
 <body>
@@ -23,12 +23,12 @@
             <label>telefono: </label>
             <a href="tel:+393914852508">+393914852508</a>
 
-
         </div>
 
     </div>
 
 </div>
-</body>
+
 <jsp:include page="footer.jsp"></jsp:include>
+</body>
 </html>
