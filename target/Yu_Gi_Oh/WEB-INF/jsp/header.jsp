@@ -43,7 +43,8 @@
     </div>
     <div class="search-box">
         <form action="Search" method="get">
-            <input type="text" name="keyword" placeholder="Cerca carta (es: Drago Bianco)...">
+            <label for="keyword">Cerca carta:</label>
+            <input type="text" id="keyword" name="keyword" placeholder="Cerca carta (es: Drago Bianco)...">
             <button type="submit">Cerca</button>
         </form>
     </div>

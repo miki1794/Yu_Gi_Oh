@@ -51,11 +51,6 @@ label {
     outline: none;
 }
 
-.input:focus {
-    border-color: #F7CE5B;
-    box-shadow: 0 0 0 3px rgba(247, 206, 91, 0.3);
-}
-
 .phoneGroup {
     display: flex;
     gap: 30px;
@@ -71,7 +66,7 @@ label {
     display: flex;
     align-self: center;
     justify-content: center;
-    cursor: pointer;
+
     background: #F7CE5B;
     color: #1F1300;
     border: none;
@@ -80,9 +75,8 @@ label {
     transition: background 0.2s;
 }
 
-.button:hover {
-    background: #F7B05B;
-}
+
+
 
 @media (max-width: 768px) {
 

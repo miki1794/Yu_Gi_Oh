@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Procedi all'acquisto</title>
-  <link rel="stylesheet" href="./css/cartOrder.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/CartOrder.css">
 </head>
 <body>
 
@@ -17,7 +18,7 @@
       <h1>Conferma Acquisto</h1>
     </div>
 
-    <form action="CartOrder" method="post">
+    <form action="${pageContext.request.contextPath}/CartOrder" method="post">
 
       <div class="form-group">
         <label for="nome">Nome:</label>
@@ -27,16 +28,16 @@
         <input type="text" id="cognome" name="cognome" required>
         <br><br>
 
-        <label>Via:</label>
+        <label for="via">Via:</label>
         <input type="text" id="via" name="via" required>
 
-        <label>Civico:</label>
+        <label for="civico">Civico:</label>
         <input type="text" id="civico" name="civico" required>
 
-        <label>CAP:</label>
+        <label for="cap">CAP:</label>
         <input type="text" id="cap" name="cap" required pattern="[0-9]{5}" title="Inserisci un CAP valido">
 
-        <label>Paese:</label>
+        <label for="paese">Paese:</label>
         <input type="text" id="paese" name="paese" required>
         <br><br>
 

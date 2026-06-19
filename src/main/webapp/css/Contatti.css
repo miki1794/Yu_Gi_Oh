@@ -1,25 +1,55 @@
 body {
-    background: linear-gradient(180deg,#DFD6A7 5%, #AF9B46 67%);
+    background: linear-gradient(180deg, #DFD6A7 5%, #AF9B46 67%);
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    align-self: center;
-    padding: 5%;
+    box-sizing: border-box;
+    padding: 60px 20px;
     min-height: 100vh;
 }
 
 .contact {
     width: 100%;
-    align-self: center;
-    padding: 5%;
-    font-size: 2vw;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: #FEF6E6;
-    letter-spacing: 2px;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 35px 40px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    border: 2px solid #FEF6E6;
+    letter-spacing: 1px;
+    line-height: 1.6;
     background-color: #F7CE5B;
-    color: #FEF6E6;
+    color: #1F1300;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.contact a {
+    color: #1F1300;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.contact a:hover {
+    color: #4A3A2D;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 30px 16px;
+    }
+
+    .contact {
+        padding: 25px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border-width: 1.5px;
+    }
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +13,18 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
-
-
-
 <div class="login-container">
     <form action="login" method="POST" class="login-form" onsubmit="return validateForm()">
         <fieldset>
             <legend>Login</legend>
+
+            <c:if test="${not empty errorMessagesJson}">
+                <p class="error-message" id="serverError"></p>
+                <script>
+                    document.getElementById("serverError").innerText =
+                        JSON.parse('${errorMessagesJson}').error;
+                </script>
+            </c:if>
 
             <div class="form-container">
                 <div class="form-group">
@@ -37,7 +43,8 @@
                     <input type="button" id="button" value="Registrati" onclick="location.href='Registrazione'" class="button">
                     <input type="submit" value="Login" class="button">
                 </div>
-            </div> </fieldset>
+            </div>
+        </fieldset>
     </form>
 </div>
 </body>

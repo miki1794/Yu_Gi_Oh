@@ -7,8 +7,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/pageAdmin.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pageAdmin.css">
   <title>Admin</title>
 </head>
 <body>
@@ -19,10 +19,10 @@
   <h1>Benvenuto <%= userData.get("username") %>!</h1>
 
   <div class="gestione">
-    <a href="AddProduct">
+    <a href="${pageContext.request.contextPath}/AddProduct">
       <button class="addproductbtn">Aggiungi prodotto</button>
     </a>
-    <a href="ManageOrder">
+    <a href="${pageContext.request.contextPath}/ManageOrder">
       <button class="manageordersbtn">Gestisci Ordini</button>
     </a>
   </div>

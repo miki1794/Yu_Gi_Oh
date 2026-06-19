@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/product.css">
 
 
     <title>Risultati Ricerca</title>
@@ -50,10 +50,10 @@
                         String imgPath = carta.getLink();
                         String imgSrc = (imgPath == null || imgPath.trim().isEmpty()) ? "assets/images/pictureplaceholder.jpg" : imgPath;
                     %>
-                    <a href="Prodotto?id=<%= carta.getId() %>">
+                    <a href="${pageContext.request.contextPath}/Prodotto?id=<%= carta.getId() %>">
                         <img src="<%= imgSrc %>" alt="<%=carta.getNome()%>">
                     </a>
-                    <a href="Prodotto?id=<%= carta.getId() %>" aria-label="Visualizza dettagli di <%= carta.getNome() %>">
+                    <a href="${pageContext.request.contextPath}/Prodotto?id=<%= carta.getId() %>" aria-label="Visualizza dettagli di <%= carta.getNome() %>">
                         <strong><%= carta.getNome() %></strong>
                     </a> - &euro;<%= carta.getPrezzo() %>
                 </li>

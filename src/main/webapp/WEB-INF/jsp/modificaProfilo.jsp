@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -13,56 +14,52 @@
 
 <main>
     <div class="registration-container">
-        <form action="${pageContext.request.contextPath}/editprofile" method="POST" class="registration-form">
+        <form action="${pageContext.request.contextPath}/editprofile" method="POST" class="registration-form" autocomplete="off">
             <fieldset>
                 <legend class="biglabel">Modifica Profilo</legend>
 
                 <%-- Messaggi di esito --%>
-                <% if (request.getAttribute("errore") != null) { %>
+                <c:if test="${not empty errore}">
                     <p style="color:red; font-weight:bold;">${errore}</p>
-                <% } %>
-                <% if (request.getAttribute("messaggio") != null) { %>
+                </c:if>
+                <c:if test="${not empty messaggio}">
                     <p style="color:green; font-weight:bold;">${messaggio}</p>
-                <% } %>
+                </c:if>
 
                 <div class="form-group">
 
-                    <%-- Pre-popola i campi con i dati attuali dalla sessione --%>
-                    <%
-                        Model.Bean.Utente u = (Model.Bean.Utente) session.getAttribute("utente");
-                        String usernameVal   = (u != null && u.getNomeUtente()     != null) ? u.getNomeUtente()     : "";
-                        String emailVal      = (u != null && u.getEmail()          != null) ? u.getEmail()          : "";
-                        String telefonoVal   = (u != null && u.getNumeroTelefono() != null) ? u.getNumeroTelefono() : "";
-                        String dataNascitaVal= (u != null && u.getDataNascita()    != null) ? u.getDataNascita().toString() : "";
-                    %>
-
                     <label for="username">Username</label><br>
                     <input type="text" id="username" name="username"
-                           value="<%= usernameVal %>"
-                           placeholder="inserisci username" class="input"><br>
+                           value="${sessionScope.utente.nomeUtente}"
+                           placeholder="inserisci username" class="input"
+                           autocomplete="off"><br>
 
                     <label for="email">Email</label><br>
                     <input type="email" id="email" name="email"
-                           value="<%= emailVal %>"
-                           placeholder="inserisci email" class="input"><br>
+                           value="${sessionScope.utente.email}"
+                           placeholder="inserisci email" class="input"
+                           autocomplete="off"><br>
 
                     <label for="DataDiNascita">Data di nascita:</label><br>
                     <input type="date" id="DataDiNascita" name="DataDiNascita"
-                           value="<%= dataNascitaVal %>"
-                           class="input"><br>
+                           value="${sessionScope.utente.dataNascita}"
+                           class="input" autocomplete="off"><br>
 
                     <label for="NumeroDiTelefono">Numero di telefono:</label><br>
                     <input type="tel" id="NumeroDiTelefono" name="NumeroDiTelefono"
-                           value="<%= telefonoVal %>"
-                           class="input" minlength="10" maxlength="15"><br>
+                           value="${sessionScope.utente.numeroTelefono}"
+                           class="input" minlength="10" maxlength="15"
+                           autocomplete="off"><br>
 
                     <label for="password">Nuova Password <small>(lascia vuoto per non cambiare)</small></label><br>
                     <input type="password" id="password" name="password"
-                           placeholder="nuova password" class="input"><br>
+                           placeholder="nuova password" class="input"
+                           autocomplete="new-password"><br>
 
                     <label for="conferma-password">Conferma nuova Password</label><br>
                     <input type="password" id="conferma-password" name="conferma-password"
-                           placeholder="conferma password" class="input"><br>
+                           placeholder="conferma password" class="input"
+                           autocomplete="new-password"><br>
 
                     <input type="submit" value="Salva modifiche" class="button">
 
@@ -73,7 +70,6 @@
 </main>
 
 <jsp:include page="footer.jsp"/>
-
 
 </body>
 </html>

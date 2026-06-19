@@ -1,10 +1,12 @@
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/Styles.css">
-  <link rel="stylesheet" href="./css/Privacy.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Privacy.css">
   <title>Privacy Policy</title>
 </head>
 <body>
@@ -28,7 +30,7 @@
     Accedendo o utilizzando il sito web, accetti di essere vincolato da questi Termini e Condizioni, così come dalle politiche sulla Privacy e qualsiasi altra condizione aggiuntiva che possa essere applicata in relazione a specifiche funzionalità del sito.<br>
 
     2. Descrizione del Servizio<br>
-    Yu_Gi_Oh offre una piattaforma per l'acquisto di carte da gioco . Gli utenti possono esplorare il nostro catalogo, acquistare prodotti.<br>
+    Yu_Gi_Oh offre una piattaforma per l'acquisto di carte da gioco. Gli utenti possono esplorare il nostro catalogo, acquistare prodotti.<br>
 
     3. Registrazione e Account Utente<br>
     Per acquistare prodotti dal sito, gli utenti potrebbero dover creare un account. L'utente è responsabile della protezione della propria password e della sicurezza del proprio account. Accetti di fornire informazioni accurate e complete durante la registrazione e di aggiornare tempestivamente le informazioni, se necessario.<br>
@@ -40,7 +42,7 @@
     La spedizione dei prodotti acquistati avverrà entro i tempi indicati durante il processo di acquisto, salvo imprevisti. Non siamo responsabili per ritardi causati da eventi al di fuori del nostro controllo, come ritardi nelle consegne da parte dei corrieri.<br>
 
     6. Politica di Restituzione e Rimborso<br>
-    Accettiamo resi e rimborsi in caso di prodotti difettosi o non conformi alla descrizione. Se desideri restituire un prodotto, contattaci entro [X giorni] dalla ricezione dell'ordine. I vinili devono essere restituiti nelle stesse condizioni in cui sono stati ricevuti.<br>
+    Accettiamo resi e rimborsi in caso di prodotti difettosi o non conformi alla descrizione. Se desideri restituire un prodotto, contattaci entro alcuni giorni dalla ricezione dell'ordine. I prodotti devono essere restituiti nelle stesse condizioni in cui sono stati ricevuti.<br>
 
     7. Proprietà Intellettuale<br>
     Tutti i contenuti presenti sul sito, inclusi testi, immagini, loghi, grafica, e software, sono protetti da diritti d'autore e altre leggi sulla proprietà intellettuale. Non è consentito copiare, riprodurre, distribuire o utilizzare in altro modo i contenuti senza il nostro permesso esplicito.<br>

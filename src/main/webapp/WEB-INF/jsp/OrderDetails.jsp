@@ -8,15 +8,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/OrderDetails.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/OrderDetails.css">
   <title>Order Details</title>
 </head>
 <body>
 
 <jsp:include page="header.jsp"></jsp:include>
-
-
 
 <div class="orderdetails">
   <h2>Dettagli Ordine</h2>
@@ -30,7 +28,7 @@
   <p><strong>Date:</strong> <%= order.getDataOrdine() %></p>
 
   <div class="update">
-    <form action="UpdateStatus" method="post">
+    <form action="${pageContext.request.contextPath}/UpdateStatus" method="post">
       <input type="hidden" name="id" value="<%= order.getId() %>">
       <label for="selectStato" class="sr-only">Cerca:</label>
       <select name="status" id="selectStato">
