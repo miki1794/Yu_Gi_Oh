@@ -21,6 +21,25 @@
     <link rel="stylesheet" href="./css/AddProduct.css">
     <title>Aggiungi Prodotto</title>
 
+    <style>
+        #dropZone {
+            border: 2px dashed #999;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        #dropZone:hover {
+            background: #f5f5f5;
+        }
+
+        .preview {
+            margin-top: 10px;
+            max-width: 200px;
+        }
+    </style>
 </head>
 
 <body>

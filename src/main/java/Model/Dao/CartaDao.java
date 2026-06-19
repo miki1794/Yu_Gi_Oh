@@ -15,8 +15,8 @@ public class CartaDao extends AbstractDAO {
             PreparedStatement ps=prepareStatement(connection,"save_carta");
             ps.setString(1, carta.getNome());
 
-            ps.setFloat(6, carta.getPrezzo());
-            ps.setString(2, carta.getLink());
+            ps.setFloat(2, carta.getPrezzo());
+            ps.setString(3, carta.getLink());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {

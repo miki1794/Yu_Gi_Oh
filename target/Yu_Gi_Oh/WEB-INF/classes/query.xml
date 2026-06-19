@@ -38,13 +38,13 @@
 
 
     <entry key="save_carta">
-        INSERT INTO Carta(id, nome, prezzo, link)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO Carta(nome, prezzo,img_path)
+        VALUES (?, ?, ?)
     </entry>
 
     <entry key="UPDATE_CARTA">
         UPDATE Carta
-        SET nome=?, prezzo=?, link=?
+        SET nome=?, prezzo=?,img_path=?
         WHERE id=?
     </entry>
 

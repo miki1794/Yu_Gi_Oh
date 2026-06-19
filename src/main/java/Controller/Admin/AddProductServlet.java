@@ -1,23 +1,29 @@
 package Controller.Admin;
-
 import Model.Bean.Carta;
 import Model.Dao.CartaDao;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
 @WebServlet(name = "AddProduct", value = "/AddProduct")
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 2,
+        maxFileSize = 1024 * 1024 * 10,
+        maxRequestSize = 1024 * 1024 * 50
+)
 public class AddProductServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/AddProduct.jsp");
         dispatcher.forward(request, response);
     }
@@ -37,12 +43,34 @@ public class AddProductServlet extends HttpServlet {
         try {
             String nome = request.getParameter("nome");
             float prezzo = Float.parseFloat(request.getParameter("prezzo"));
-            String link = request.getParameter("link");
 
-            Carta carta = new Carta(nome, prezzo, link);
+            // 🔽 FILE UPLOAD (drag & drop)
+            Part filePart = request.getPart("link"); // input type="file" name="link"
+
+            String linkPath = null;
+
+            if (filePart != null && filePart.getSize() > 0) {
+
+                String uploadPath = getServletContext().getRealPath("/assets");
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) uploadDir.mkdirs();
+
+                String originalFile = filePart.getSubmittedFileName();
+                String extension = originalFile.substring(originalFile.lastIndexOf("."));
+
+                String fileName = nome + "_" + System.currentTimeMillis() + extension;
+
+                String fileFullPath = uploadPath + File.separator + fileName;
+                filePart.write(fileFullPath);
+
+                linkPath = "assets/" + fileName;
+            }
+                System.out.println(linkPath);
+            Carta carta = new Carta(nome, prezzo, linkPath);
 
             CartaDao cartaDao = new CartaDao();
             boolean saved = cartaDao.doSave(carta);
+
             System.out.println("Carta salvata: " + saved);
 
             response.sendRedirect("ListaProdotti");

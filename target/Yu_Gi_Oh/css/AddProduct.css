@@ -1,0 +1,101 @@
+.mainpage {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.mainpage h2 {
+    font-family: 'Lobster', cursive;
+    color: #1F1300;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.mainpage form {
+    background-color: #fff;
+    border: 2px solid #AF9B46;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.mainpage form label {
+    font-weight: bold;
+    color: #AF9B46;
+    font-size: 1rem;
+}
+
+.mainpage form input[type="text"],
+.mainpage form input[type="number"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #AF9B46;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #1F1300;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.mainpage form input[type="text"]:focus,
+.mainpage form input[type="number"]:focus {
+    outline: none;
+    border-color: #F7CE5B;
+    box-shadow: 0 0 0 3px rgba(247, 206, 91, 0.4);
+    background-color: #fff;
+}
+
+.mainpage form input[type="text"]:hover,
+.mainpage form input[type="number"]:hover {
+    background-color: #fff;
+    border-color: #F7B05B;
+}
+
+.mainpage form button[type="submit"] {
+    background-color: #F7CE5B;
+    color: #1F1300;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Lobster', cursive;
+    margin-top: 10px;
+}
+
+.mainpage form button[type="submit"]:hover {
+    background-color: #F7B05B;
+    color: #1F1300;
+}
+
+.error-message {
+    background-color: #ffe0e0;
+    color: #a00;
+    border: 1px solid #f5c6c6;
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .mainpage {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .mainpage h2 {
+        font-size: 1.6rem;
+    }
+
+    .mainpage form {
+        padding: 20px;
+    }
+}

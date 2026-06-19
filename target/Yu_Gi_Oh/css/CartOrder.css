@@ -1,0 +1,155 @@
+.container {
+    max-width: 560px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.fieldset {
+    background: #DFD6A7;
+    border-radius: 12px;
+    padding: 35px 40px;
+    border: solid 3px #AF9B46;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.biglabel h1 {
+    color: #1F1300;
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #AF9B46;
+    padding-bottom: 15px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+.form-group label {
+    grid-column: span 2;
+    color: #4A3A2D;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.form-group input {
+    grid-column: span 2;
+    padding: 10px 12px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    border: 1.5px solid #AF9B46;
+    border-radius: 6px;
+    background: #fff;
+    color: #1F1300;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #F7CE5B;
+    box-shadow: 0 0 0 3px rgba(247, 206, 91, 0.35);
+}
+
+/* Nome / Cognome affiancati */
+.form-group label[for="nome"],
+.form-group label[for="cognome"] {
+    grid-column: span 1;
+}
+
+.form-group input#nome,
+.form-group input#cognome {
+    grid-column: span 1;
+}
+
+/* Civico / CAP affiancati */
+.form-group label[for="civico"],
+.form-group label[for="cap"] {
+    grid-column: span 1;
+}
+
+.form-group input#civico,
+.form-group input#cap {
+    grid-column: span 1;
+}
+
+.conferma {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.conferma button {
+    border-radius: 10px;
+    padding: 12px 30px;
+    width: 60%;
+    background: #F7CE5B;
+    color: #1F1300;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.conferma button:hover {
+    background: #F7B05B;
+    transform: translateY(-1px);
+}
+
+.conferma button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .fieldset {
+        padding: 25px 20px;
+        border-width: 2px;
+        border-radius: 8px;
+    }
+
+    .biglabel h1 {
+        font-size: 20px;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group label[for="nome"],
+    .form-group label[for="cognome"],
+    .form-group label[for="civico"],
+    .form-group label[for="cap"] {
+        grid-column: span 1;
+    }
+
+    .form-group input#nome,
+    .form-group input#cognome,
+    .form-group input#civico,
+    .form-group input#cap {
+        grid-column: span 1;
+    }
+
+    .form-group input {
+        font-size: 1rem;
+    }
+
+    .conferma button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
