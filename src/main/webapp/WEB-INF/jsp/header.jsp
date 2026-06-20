@@ -29,20 +29,21 @@
 <body>
 <header class="header">
     <div class="header-links">
-        <a href="Home">Home</a>
-        <a href="ListaProdotti">Catalogo</a>
+        <a href="${pageContext.request.contextPath}/Home">Home</a>
+        <a href="${pageContext.request.contextPath}/ListaProdotti">Catalogo</a>
         <div id="rightsection"
              data-logged="<%= isLogged %>"
-             data-username="<%= username %>">
+             data-username="<%= username %>"
+             data-context="${pageContext.request.contextPath}">
         </div>
         <div class="admin-check">
             <% if (isAdmin) { %>
-            <button onclick="window.location.href='PageAdmin'">Pannello Admin</button>
+            <button onclick="window.location.href='${pageContext.request.contextPath}/PageAdmin'">Pannello Admin</button>
             <% } %>
         </div>
     </div>
     <div class="search-box">
-        <form action="Search" method="get">
+        <form action="${pageContext.request.contextPath}/Search" method="get">
             <label for="keyword">Cerca carta:</label>
             <input type="text" id="keyword" name="keyword" placeholder="Cerca carta (es: Drago Bianco)...">
             <button type="submit">Cerca</button>

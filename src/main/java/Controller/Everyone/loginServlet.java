@@ -30,11 +30,11 @@ public class loginServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    protected  void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String Username=request.getParameter("Username");
-        String Password=request.getParameter("Password");
-        String hashedPassword= Utils.toHash(Password);
+        String Username = request.getParameter("Username");
+        String Password = request.getParameter("Password");
+        String hashedPassword = Utils.toHash(Password);
         try {
 
             List<String> errorMessages = new ArrayList<>();
@@ -57,21 +57,20 @@ public class loginServlet extends HttpServlet {
             return;
 
         }
-        UtenteDao service= new UtenteDao();
-        Utente utente=service.doRetrievebyUsername(Username);
-        if(utente!=null&&utente.getPassword().equals(hashedPassword)){
-            HttpSession session = request.getSession(true); //accedo alla sessione , permette di creare ogetto sessione
-            Map<String,String> map=new HashMap<>();
-            String isLogged="true";
-            map.put("isLogged",isLogged);
+        UtenteDao service = new UtenteDao();
+        Utente utente = service.doRetrievebyUsername(Username);
+        if (utente != null && utente.getPassword().equals(hashedPassword)) {
+            HttpSession session = request.getSession(true);
+            Map<String, String> map = new HashMap<>();
+            String isLogged = "true";
+            map.put("isLogged", isLogged);
             map.put("username", utente.getNomeUtente());
             map.put("idUtente", utente.getIdUtente());
             map.put("email", utente.getEmail());
             map.put("dataNascita", utente.getDataNascita().toString());
             map.put("ruolo", utente.getRuolo());
-            session.setAttribute("map",map);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/home.jsp");
-            dispatcher.forward(request, response);
+            session.setAttribute("map", map);
+            response.sendRedirect(request.getContextPath() + "/Home");
             return;
         } else {
             JsonObject errorMessages = new JsonObject();
@@ -80,10 +79,7 @@ public class loginServlet extends HttpServlet {
             request.setAttribute("errorMessagesJson", errorMessagesJson);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
             dispatcher.forward(request, response);
-
         }
 
     }
 }
-
-
