@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css?v=2.0">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
     <title>home</title>
 </head>
@@ -15,7 +14,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <div class="conteiner">
-    <a href="ListaProdotti">
+    <a href="${pageContext.request.contextPath}/ListaProdotti">
         <h1> Prodotti</h1>
     </a>
 
@@ -51,5 +50,7 @@
 </div>
 
 <script src="${pageContext.request.contextPath}/script/SlideShow.js"></script>
-</body>
+
 <jsp:include page="footer.jsp"></jsp:include>
+</body>
+</html>

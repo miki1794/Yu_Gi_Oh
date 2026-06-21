@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/registration.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/registration.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
     <title>Registrazione</title>
 </head>
 <body>
@@ -13,18 +13,21 @@
 
 <main>
     <div class="registration-container">
-        <form action="registrazione" method="POST" class="registration-form">
+        <form action="${pageContext.request.contextPath}/registrazione" method="POST" class="registration-form" onsubmit="return validateAndSubmitForm(event)">
             <fieldset>
                 <legend class="biglabel">Registrazione</legend>
 
                 <div class="form-group">
 
-                    <label for="username">Username</label><br>
-                    <input type="text" id="username" name="username" value="" required placeholder="inserisci username" class="input"><br>
+                    <span id="usernameError" class="error-message"></span>
+                    <label for="Username">Username</label><br>
+                    <input type="text" id="Username" name="username" value="" required placeholder="inserisci username" class="input"><br>
 
-                    <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email" placeholder="inserisci email" class="input"><br>
+                    <span id="emailError" class="error-message"></span>
+                    <label for="Email">Email</label><br>
+                    <input type="email" id="Email" name="email" placeholder="inserisci email" class="input"><br>
 
+                    <span id="birthDateError" class="error-message"></span>
                     <label for="DataDiNascita">Data di nascita:</label><br>
                     <input type="date" id="DataDiNascita" name="DataDiNascita" class="input"><br>
 
@@ -41,12 +44,13 @@
                         </div>
                     </div>
 
-                    <label for="password">Password</label><br>
-                    <input type="password" class ="input "id="password" name="password" placeholder="inserisci password"><br>
+                    <span id="passwordError" class="error-message"></span>
+                    <label for="Password">Password</label><br>
+                    <input type="password" class="input" id="Password" name="password" placeholder="inserisci password"><br>
 
-                    <label for="conferma-password">Conferma password</label><br>
-                    <input type="password" class ="input" id="conferma-password" name="conferma-password" placeholder="conferma password"><br>
-
+                    <span id="cpasswordError" class="error-message"></span>
+                    <label for="CPassword">Conferma password</label><br>
+                    <input type="password" class="input" id="CPassword" name="conferma-password" placeholder="conferma password"><br>
 
                     <input type="submit" value="registrati" class="button">
 
@@ -56,7 +60,8 @@
     </div>
 </main>
 
-</body>
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/script/Regioni.js"></script>
+<script src="${pageContext.request.contextPath}/script/RegistrationValidation.js"></script>
+</body>
 </html>
