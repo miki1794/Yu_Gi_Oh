@@ -14,7 +14,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="login-container">
-    <form action="login" method="POST" class="login-form" onsubmit="return validateForm()">
+    <form action="${pageContext.request.contextPath}/login" method="POST" class="login-form" onsubmit="return validateLoginForm()">
         <fieldset>
             <legend>Login</legend>
 
@@ -28,25 +28,26 @@
 
             <div class="form-container">
                 <div class="form-group">
-                    <span id="usernameError" class="error-message"></span>
+                    <span id="UsernameError" class="error-message"></span>
                     <label for="Username">Username:</label>
                     <input type="text" id="Username" name="Username" required placeholder="Inserisci Username" class="input">
                 </div>
 
                 <div class="form-group">
-                    <span id="passwordError" class="error-message"></span>
+                    <span id="PasswordError" class="error-message"></span>
                     <label for="Password">Password:</label>
                     <input type="password" id="Password" name="Password" required placeholder="Inserisci Password" class="input">
                 </div>
 
                 <div class="form-actions">
-
                     <input type="submit" value="Login" class="button">
                 </div>
             </div>
         </fieldset>
     </form>
 </div>
-</body>
+
 <jsp:include page="footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/script/LoginValidation.js"></script>
+</body>
 </html>

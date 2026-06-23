@@ -6,7 +6,7 @@
     boolean isAdmin = isLoggedIn && "admin".equals(userData.get("ruolo"));
 
     if (!isAdmin) {
-        response.sendRedirect("Home");
+        response.sendRedirect(request.getContextPath() + "/Home");
         return;
     }
 %>
@@ -17,8 +17,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/AddProduct.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/AddProduct.css">
     <title>Aggiungi Prodotto</title>
 
 </head>
@@ -34,7 +34,7 @@
     <% } %>
 
     <!-- 🔥 IMPORTANTE -->
-    <form action="AddProduct" method="post" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/AddProduct" method="post" enctype="multipart/form-data">
 
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
@@ -43,15 +43,15 @@
         <input type="number" id="prezzo" name="prezzo" step="0.01" min="0" required>
 
         <!-- 🔽 DRAG & DROP -->
-        <label>Immagine prodotto:</label>
+        <label id="dropZoneLabel">Immagine prodotto:</label>
 
         <input type="file" id="fileInput" name="link" hidden accept="image/*">
 
-        <div id="dropZone">
+        <div id="dropZone" tabindex="0" role="button" aria-labelledby="dropZoneLabel" aria-label="Trascina qui l'immagine o premi Invio per selezionarla">
             Trascina qui l'immagine o clicca per selezionarla
         </div>
 
-        <img id="preview" class="preview" style="display:none;"/>
+        <img id="preview" class="preview" style="display:none;" alt="Anteprima immagine prodotto"/>
 
         <button type="submit">Aggiungi Prodotto</button>
     </form>
@@ -65,6 +65,13 @@
     const preview = document.getElementById("preview");
 
     dropZone.addEventListener("click", () => fileInput.click());
+
+    dropZone.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            fileInput.click();
+        }
+    });
 
     dropZone.addEventListener("dragover", (e) => {
         e.preventDefault();
